@@ -1,0 +1,4 @@
+train_protein_pairs.pkl (~386 MB) is not stored on GitHub.
+
+Download from the Zenodo archive of this release (DOI to be added).
+val/test and IntAct splits are included in this repository.

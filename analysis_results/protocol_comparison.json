@@ -1,0 +1,31 @@
+[
+  {
+    "dataset": "HVIDB val",
+    "protocol": "pair-file subset (old Tables 1\u20133)",
+    "fusion_mrr": 0.6139160355740446,
+    "fusion_hit@10": 0.9133333333333333
+  },
+  {
+    "dataset": "HVIDB val",
+    "protocol": "fixed 2104 gallery",
+    "gallery_size": 1115,
+    "fusion_mrr": 0.052626376795146146,
+    "fusion_hit@10": 0.021,
+    "retrieval_hit@10": 0.013333333333333334,
+    "recall@100": 0.142
+  },
+  {
+    "dataset": "IntAct",
+    "protocol": "pair-file subset (old Table 3)",
+    "fusion_mrr": 0.5216786442231265,
+    "fusion_hit@10": 0.856686541737649
+  },
+  {
+    "dataset": "IntAct",
+    "protocol": "fixed 2104 gallery",
+    "gallery_size": 1229,
+    "evaluable_in_gallery": 4696,
+    "fusion_mrr": 0.05394346319330727,
+    "fusion_hit@10": 0.026405451448040886
+  }
+]

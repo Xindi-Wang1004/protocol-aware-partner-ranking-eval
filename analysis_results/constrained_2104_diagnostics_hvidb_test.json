@@ -1,0 +1,280 @@
+{
+  "evaluated_at": "2026-07-22T18:34:43.642933",
+  "protocol": "constrained_2104_diagnostics",
+  "pairs_pkl": "data/processed/test_protein_pairs.pkl",
+  "main_eval_json": "analysis_results/constrained_2104_hvidb_test.json",
+  "fusion_alpha": 0.7,
+  "recall_k_list": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "oracle_thresholds": [
+    20,
+    50,
+    100
+  ],
+  "depth_k_list": [
+    20,
+    50,
+    100,
+    200
+  ],
+  "candidate_pool": {
+    "nominal_hvidb_viruses": 2104,
+    "gallery_with_sequence": 1115,
+    "missing_sequence_ids": 989,
+    "max_length": 512,
+    "n_gallery_ranked": 1115,
+    "n_query_humans": 1612
+  },
+  "query_coverage": {
+    "n_total_queries": 3000,
+    "n_true_in_gallery": 3000,
+    "n_true_in_nominal_hvidb2104": 3000,
+    "n_true_in_gallery_not_nominal2104": 0,
+    "n_true_missing_from_gallery": 0,
+    "frac_true_in_gallery": 1.0,
+    "frac_true_in_nominal2104": 1.0,
+    "recall@20_in_nominal2104_only": 0.04066666666666666,
+    "recall@20_in_gallery_not_nominal": 0.0
+  },
+  "recall_curve": {
+    "recall@1": 0.003,
+    "recall@1_n": 3000,
+    "recall@5": 0.010666666666666666,
+    "recall@5_n": 3000,
+    "recall@10": 0.019666666666666666,
+    "recall@10_n": 3000,
+    "recall@20": 0.04066666666666666,
+    "recall@20_n": 3000,
+    "recall@50": 0.08933333333333333,
+    "recall@50_n": 3000,
+    "recall@100": 0.156,
+    "recall@100_n": 3000
+  },
+  "oracle_upper_bound": {
+    "20": {
+      "recall_threshold": 20,
+      "n_queries_in_subset": 122,
+      "fraction_of_evaluable": 0.04066666666666666,
+      "rerank_depth": 20,
+      "classifier_head_rerank": {
+        "mrr": 0.3867528907126304,
+        "hit@1": 0.18032786885245902,
+        "hit@5": 0.6229508196721312,
+        "hit@10": 0.8688524590163934,
+        "hit@20": 1.0,
+        "total_queries": 122,
+        "alpha": 0.0,
+        "top_k": 20
+      },
+      "fusion": {
+        "mrr": 0.2485881102985732,
+        "hit@1": 0.09836065573770492,
+        "hit@5": 0.38524590163934425,
+        "hit@10": 0.6311475409836066,
+        "hit@20": 1.0,
+        "total_queries": 122,
+        "alpha": 0.7,
+        "top_k": 20
+      }
+    },
+    "50": {
+      "recall_threshold": 50,
+      "n_queries_in_subset": 268,
+      "fraction_of_evaluable": 0.08933333333333333,
+      "rerank_depth": 50,
+      "classifier_head_rerank": {
+        "mrr": 0.2786807212636946,
+        "hit@1": 0.13432835820895522,
+        "hit@5": 0.40298507462686567,
+        "hit@10": 0.6194029850746269,
+        "hit@20": 0.8992537313432836,
+        "total_queries": 268,
+        "alpha": 0.0,
+        "top_k": 50
+      },
+      "fusion": {
+        "mrr": 0.14415935831934767,
+        "hit@1": 0.05223880597014925,
+        "hit@5": 0.1865671641791045,
+        "hit@10": 0.31343283582089554,
+        "hit@20": 0.6082089552238806,
+        "total_queries": 268,
+        "alpha": 0.7,
+        "top_k": 50
+      }
+    },
+    "100": {
+      "recall_threshold": 100,
+      "n_queries_in_subset": 468,
+      "fraction_of_evaluable": 0.156,
+      "rerank_depth": 100,
+      "classifier_head_rerank": {
+        "mrr": 0.17621611459080896,
+        "hit@1": 0.06837606837606838,
+        "hit@5": 0.25427350427350426,
+        "hit@10": 0.3974358974358974,
+        "hit@20": 0.6047008547008547,
+        "total_queries": 468,
+        "alpha": 0.0,
+        "top_k": 100
+      },
+      "fusion": {
+        "mrr": 0.09226357845511801,
+        "hit@1": 0.029914529914529916,
+        "hit@5": 0.11538461538461539,
+        "hit@10": 0.1858974358974359,
+        "hit@20": 0.38247863247863245,
+        "total_queries": 468,
+        "alpha": 0.7,
+        "top_k": 100
+      }
+    }
+  },
+  "depth_sensitivity": {
+    "fusion_alpha": 0.7,
+    "by_depth": {
+      "20": {
+        "rerank_depth": 20,
+        "classifier_head_rerank": {
+          "mrr": 0.06141049057151999,
+          "hit@1": 0.007333333333333333,
+          "hit@5": 0.025333333333333333,
+          "hit@10": 0.035333333333333335,
+          "hit@20": 0.04066666666666666,
+          "total_queries": 3000,
+          "alpha": 0.0,
+          "top_k": 20
+        },
+        "fusion": {
+          "mrr": 0.05579178950134832,
+          "hit@1": 0.004,
+          "hit@5": 0.015666666666666666,
+          "hit@10": 0.025666666666666667,
+          "hit@20": 0.04066666666666666,
+          "total_queries": 3000,
+          "alpha": 0.7,
+          "top_k": 20
+        }
+      },
+      "50": {
+        "rerank_depth": 50,
+        "classifier_head_rerank": {
+          "mrr": 0.04275168691655017,
+          "hit@1": 0.012,
+          "hit@5": 0.036,
+          "hit@10": 0.05533333333333333,
+          "hit@20": 0.08033333333333334,
+          "total_queries": 3000,
+          "alpha": 0.0,
+          "top_k": 50
+        },
+        "fusion": {
+          "mrr": 0.030734445160188518,
+          "hit@1": 0.004666666666666667,
+          "hit@5": 0.016666666666666666,
+          "hit@10": 0.028,
+          "hit@20": 0.05433333333333333,
+          "total_queries": 3000,
+          "alpha": 0.7,
+          "top_k": 50
+        }
+      },
+      "100": {
+        "rerank_depth": 100,
+        "classifier_head_rerank": {
+          "mrr": 0.03584614951973056,
+          "hit@1": 0.010666666666666666,
+          "hit@5": 0.03966666666666667,
+          "hit@10": 0.062,
+          "hit@20": 0.09433333333333334,
+          "total_queries": 3000,
+          "alpha": 0.0,
+          "top_k": 100
+        },
+        "fusion": {
+          "mrr": 0.022749553882562765,
+          "hit@1": 0.004666666666666667,
+          "hit@5": 0.018,
+          "hit@10": 0.029,
+          "hit@20": 0.059666666666666666,
+          "total_queries": 3000,
+          "alpha": 0.7,
+          "top_k": 100
+        }
+      },
+      "200": {
+        "rerank_depth": 200,
+        "classifier_head_rerank": {
+          "mrr": 0.03652873021758451,
+          "hit@1": 0.012333333333333333,
+          "hit@5": 0.044,
+          "hit@10": 0.07466666666666667,
+          "hit@20": 0.11366666666666667,
+          "total_queries": 3000,
+          "alpha": 0.0,
+          "top_k": 200
+        },
+        "fusion": {
+          "mrr": 0.019807086931748152,
+          "hit@1": 0.004666666666666667,
+          "hit@5": 0.019333333333333334,
+          "hit@10": 0.030333333333333334,
+          "hit@20": 0.06466666666666666,
+          "total_queries": 3000,
+          "alpha": 0.7,
+          "top_k": 200
+        }
+      }
+    }
+  },
+  "main_eval_baseline_top20": {
+    "replace_rerank_top20_full_sequence": {
+      "mrr": 0.06141049057151827,
+      "hit@1": 0.007333333333333333,
+      "hit@5": 0.025333333333333333,
+      "hit@10": 0.035333333333333335,
+      "hit@20": 0.04066666666666666,
+      "hit@50": 1.0,
+      "total_queries": 3000,
+      "top_k": 20
+    },
+    "fusion_top20": {
+      "mrr": 0.05579178950134832,
+      "hit@1": 0.004,
+      "hit@5": 0.015666666666666666,
+      "hit@10": 0.025666666666666667,
+      "hit@20": 0.04066666666666666,
+      "total_queries": 3000,
+      "alpha": 0.7,
+      "top_k": 20
+    },
+    "direct_classifier": {
+      "mrr": 0.03506838227261444,
+      "hit@1": 0.007666666666666666,
+      "hit@5": 0.04,
+      "hit@10": 0.073,
+      "hit@20": 0.13033333333333333,
+      "total_queries": 3000
+    },
+    "retrieval_only": {
+      "mrr": 0.013229754800693742,
+      "hit@1": 0.003,
+      "hit@5": 0.010666666666666666,
+      "hit@10": 0.019666666666666666,
+      "hit@20": 0.04066666666666666,
+      "total_queries": 3000
+    }
+  },
+  "notes": {
+    "oracle_definition": "Queries where retriever full-gallery rank <= threshold; stage-2 rerank/fusion runs within top-{threshold} candidates.",
+    "classifier_head_rerank": "alpha=0 fusion using precomputed classifier embeddings (fast; same stage-2 head as score fusion, not full-sequence replace rerank).",
+    "full_sequence_replace_rerank": "See main_eval_baseline_top20.replace_rerank_top20_full_sequence from constrained_2104_eval (ESM pair forward pass)."
+  },
+  "elapsed_sec": 370.6877281665802
+}

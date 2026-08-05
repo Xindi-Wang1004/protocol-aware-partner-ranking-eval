@@ -1,0 +1,12 @@
+{
+  "n_train_pos_pairs": 24000,
+  "n_test_pos_pairs": 3000,
+  "n_train_viruses": 973,
+  "n_test_viruses": 541,
+  "n_test_viruses_in_train": 502,
+  "frac_test_viruses_in_train": 0.9279112754158965,
+  "n_test_humans_in_train": 1371,
+  "frac_test_humans_in_train": 0.8504962779156328,
+  "n_val_viruses_in_train": 496,
+  "frac_val_viruses_in_train": 0.9323308270676691
+}

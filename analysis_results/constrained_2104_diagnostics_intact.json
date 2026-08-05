@@ -1,0 +1,280 @@
+{
+  "evaluated_at": "2026-07-13T14:40:51.859007",
+  "protocol": "constrained_2104_diagnostics",
+  "pairs_pkl": "data/cross_intact/processed/val_protein_pairs.pkl",
+  "main_eval_json": "analysis_results/constrained_2104_intact.json",
+  "fusion_alpha": 0.7,
+  "recall_k_list": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "oracle_thresholds": [
+    20,
+    50,
+    100
+  ],
+  "depth_k_list": [
+    20,
+    50,
+    100,
+    200
+  ],
+  "candidate_pool": {
+    "nominal_hvidb_viruses": 2104,
+    "gallery_with_sequence": 1229,
+    "missing_sequence_ids": 989,
+    "max_length": 512,
+    "n_gallery_ranked": 1229,
+    "n_query_humans": 2189
+  },
+  "query_coverage": {
+    "n_total_queries": 4696,
+    "n_true_in_gallery": 4696,
+    "n_true_in_nominal_hvidb2104": 1632,
+    "n_true_in_gallery_not_nominal2104": 3064,
+    "n_true_missing_from_gallery": 0,
+    "frac_true_in_gallery": 1.0,
+    "frac_true_in_nominal2104": 0.3475298126064736,
+    "recall@20_in_nominal2104_only": 0.07904411764705882,
+    "recall@20_in_gallery_not_nominal": 0.03328981723237598
+  },
+  "recall_curve": {
+    "recall@1": 0.002555366269165247,
+    "recall@1_n": 4696,
+    "recall@5": 0.014906303236797274,
+    "recall@5_n": 4696,
+    "recall@10": 0.027044293015332198,
+    "recall@10_n": 4696,
+    "recall@20": 0.049190800681431,
+    "recall@20_n": 4696,
+    "recall@50": 0.10178875638841567,
+    "recall@50_n": 4696,
+    "recall@100": 0.16396933560477,
+    "recall@100_n": 4696
+  },
+  "oracle_upper_bound": {
+    "20": {
+      "recall_threshold": 20,
+      "n_queries_in_subset": 231,
+      "fraction_of_evaluable": 0.049190800681431,
+      "rerank_depth": 20,
+      "classifier_head_rerank": {
+        "mrr": 0.1221437077896408,
+        "hit@1": 0.008658008658008658,
+        "hit@5": 0.1341991341991342,
+        "hit@10": 0.4025974025974026,
+        "hit@20": 1.0,
+        "total_queries": 231,
+        "alpha": 0.0,
+        "top_k": 20
+      },
+      "fusion": {
+        "mrr": 0.17618811920659452,
+        "hit@1": 0.047619047619047616,
+        "hit@5": 0.22943722943722944,
+        "hit@10": 0.5367965367965368,
+        "hit@20": 1.0,
+        "total_queries": 231,
+        "alpha": 0.7,
+        "top_k": 20
+      }
+    },
+    "50": {
+      "recall_threshold": 50,
+      "n_queries_in_subset": 478,
+      "fraction_of_evaluable": 0.10178875638841567,
+      "rerank_depth": 50,
+      "classifier_head_rerank": {
+        "mrr": 0.05099953041779222,
+        "hit@1": 0.0020920502092050207,
+        "hit@5": 0.03347280334728033,
+        "hit@10": 0.08786610878661087,
+        "hit@20": 0.22594142259414227,
+        "total_queries": 478,
+        "alpha": 0.0,
+        "top_k": 50
+      },
+      "fusion": {
+        "mrr": 0.09771148147468625,
+        "hit@1": 0.02301255230125523,
+        "hit@5": 0.10460251046025104,
+        "hit@10": 0.2405857740585774,
+        "hit@20": 0.4665271966527197,
+        "total_queries": 478,
+        "alpha": 0.7,
+        "top_k": 50
+      }
+    },
+    "100": {
+      "recall_threshold": 100,
+      "n_queries_in_subset": 770,
+      "fraction_of_evaluable": 0.16396933560477,
+      "rerank_depth": 100,
+      "classifier_head_rerank": {
+        "mrr": 0.027374817567031726,
+        "hit@1": 0.0012987012987012987,
+        "hit@5": 0.011688311688311689,
+        "hit@10": 0.03896103896103896,
+        "hit@20": 0.08961038961038961,
+        "total_queries": 770,
+        "alpha": 0.0,
+        "top_k": 100
+      },
+      "fusion": {
+        "mrr": 0.06266591742366803,
+        "hit@1": 0.014285714285714285,
+        "hit@5": 0.05714285714285714,
+        "hit@10": 0.14025974025974025,
+        "hit@20": 0.2805194805194805,
+        "total_queries": 770,
+        "alpha": 0.7,
+        "top_k": 100
+      }
+    }
+  },
+  "depth_sensitivity": {
+    "fusion_alpha": 0.7,
+    "by_depth": {
+      "20": {
+        "rerank_depth": 20,
+        "classifier_head_rerank": {
+          "mrr": 0.05128497532335065,
+          "hit@1": 0.00042589437819420784,
+          "hit@5": 0.006601362862010221,
+          "hit@10": 0.019804088586030666,
+          "hit@20": 0.049190800681431,
+          "total_queries": 4696,
+          "alpha": 0.0,
+          "top_k": 20
+        },
+        "fusion": {
+          "mrr": 0.05394346319330727,
+          "hit@1": 0.002342419080068143,
+          "hit@5": 0.011286201022146508,
+          "hit@10": 0.026405451448040886,
+          "hit@20": 0.049190800681431,
+          "total_queries": 4696,
+          "alpha": 0.7,
+          "top_k": 20
+        }
+      },
+      "50": {
+        "rerank_depth": 50,
+        "classifier_head_rerank": {
+          "mrr": 0.02280316394647484,
+          "hit@1": 0.00021294718909710392,
+          "hit@5": 0.0034071550255536627,
+          "hit@10": 0.008943781942078365,
+          "hit@20": 0.022998296422487224,
+          "total_queries": 4696,
+          "alpha": 0.0,
+          "top_k": 50
+        },
+        "fusion": {
+          "mrr": 0.027557915353032623,
+          "hit@1": 0.002342419080068143,
+          "hit@5": 0.010647359454855196,
+          "hit@10": 0.024488926746166952,
+          "hit@20": 0.047487223168654176,
+          "total_queries": 4696,
+          "alpha": 0.7,
+          "top_k": 50
+        }
+      },
+      "100": {
+        "rerank_depth": 100,
+        "classifier_head_rerank": {
+          "mrr": 0.01276616197941382,
+          "hit@1": 0.00021294718909710392,
+          "hit@5": 0.0019165247018739352,
+          "hit@10": 0.006388415672913117,
+          "hit@20": 0.01469335604770017,
+          "total_queries": 4696,
+          "alpha": 0.0,
+          "top_k": 100
+        },
+        "fusion": {
+          "mrr": 0.018552820175668068,
+          "hit@1": 0.002342419080068143,
+          "hit@5": 0.009369676320272573,
+          "hit@10": 0.022998296422487224,
+          "hit@20": 0.04599659284497445,
+          "total_queries": 4696,
+          "alpha": 0.7,
+          "top_k": 100
+        }
+      },
+      "200": {
+        "rerank_depth": 200,
+        "classifier_head_rerank": {
+          "mrr": 0.008000796749007439,
+          "hit@1": 0.0,
+          "hit@5": 0.002768313458262351,
+          "hit@10": 0.006175468483816013,
+          "hit@20": 0.015971039182282792,
+          "total_queries": 4696,
+          "alpha": 0.0,
+          "top_k": 200
+        },
+        "fusion": {
+          "mrr": 0.014041956116781556,
+          "hit@1": 0.002129471890971039,
+          "hit@5": 0.008943781942078365,
+          "hit@10": 0.021507666098807495,
+          "hit@20": 0.045357751277683135,
+          "total_queries": 4696,
+          "alpha": 0.7,
+          "top_k": 200
+        }
+      }
+    }
+  },
+  "main_eval_baseline_top20": {
+    "replace_rerank_top20_full_sequence": {
+      "mrr": 0.05128497532334693,
+      "hit@1": 0.00042589437819420784,
+      "hit@5": 0.006601362862010221,
+      "hit@10": 0.019804088586030666,
+      "hit@20": 0.049190800681431,
+      "hit@50": 1.0,
+      "total_queries": 4696,
+      "top_k": 20
+    },
+    "fusion_top20": {
+      "mrr": 0.05394346319330727,
+      "hit@1": 0.002342419080068143,
+      "hit@5": 0.011286201022146508,
+      "hit@10": 0.026405451448040886,
+      "hit@20": 0.049190800681431,
+      "total_queries": 4696,
+      "alpha": 0.7,
+      "top_k": 20
+    },
+    "direct_classifier": {
+      "mrr": 0.003088558115512163,
+      "hit@1": 0.0,
+      "hit@5": 0.00042589437819420784,
+      "hit@10": 0.002342419080068143,
+      "hit@20": 0.007666098807495741,
+      "total_queries": 4696
+    },
+    "retrieval_only": {
+      "mrr": 0.013902146255834816,
+      "hit@1": 0.002555366269165247,
+      "hit@5": 0.014906303236797274,
+      "hit@10": 0.027044293015332198,
+      "hit@20": 0.049190800681431,
+      "total_queries": 4696
+    }
+  },
+  "notes": {
+    "oracle_definition": "Queries where retriever full-gallery rank <= threshold; stage-2 rerank/fusion runs within top-{threshold} candidates.",
+    "classifier_head_rerank": "alpha=0 fusion using precomputed classifier embeddings (fast; same stage-2 head as score fusion, not full-sequence replace rerank).",
+    "full_sequence_replace_rerank": "See main_eval_baseline_top20.replace_rerank_top20_full_sequence from constrained_2104_eval (ESM pair forward pass)."
+  },
+  "elapsed_sec": 514.1086106300354
+}

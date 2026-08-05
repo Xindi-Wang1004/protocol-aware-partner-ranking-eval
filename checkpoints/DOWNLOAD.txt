@@ -1,0 +1,7 @@
+Large diagnostic checkpoints are not stored on GitHub (file-size limit).
+
+Files (Zenodo / full release on server):
+  retrieval_gnn_tau007_longrun_best_model.pt (~5.3 GB)
+  classification_esm3_frozen_best_model.pt (~5.3 GB)
+
+See README.md and PUSH.md. After Zenodo deposit, replace this note with the DOI link.

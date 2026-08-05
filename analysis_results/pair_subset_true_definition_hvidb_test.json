@@ -1,0 +1,12 @@
+{
+  "unique_viruses_in_pair_file": 541,
+  "n_pos_pairs": 3000,
+  "per_query_known_partners_median": 2.0,
+  "per_query_known_partners_min": 1,
+  "per_query_known_partners_max": 19,
+  "per_query_known_partners_iqr": [
+    1.0,
+    5.0
+  ],
+  "note": "Legacy pair-subset Hit@K uses per-query known-partner subsets."
+}

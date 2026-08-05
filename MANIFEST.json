@@ -1,0 +1,291 @@
+{
+  "release": "v1.0-diagnostic-eval",
+  "built": "2026-08-05",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1143,
+      "mb": 0.0
+    },
+    {
+      "path": "MANIFEST.json",
+      "bytes": 5539,
+      "mb": 0.01
+    },
+    {
+      "path": "README.md",
+      "bytes": 1770,
+      "mb": 0.0
+    },
+    {
+      "path": "REPRODUCE.md",
+      "bytes": 1481,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_alpha_sweep_hvidb.json",
+      "bytes": 2850,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_alpha_sweep_intact.json",
+      "bytes": 2904,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_bootstrap_cluster_hvidb_test.json",
+      "bytes": 5136,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_bootstrap_cluster_hvidb_val.json",
+      "bytes": 5170,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_bootstrap_cluster_intact.json",
+      "bytes": 5274,
+      "mb": 0.01
+    },
+    {
+      "path": "analysis_results/constrained_2104_diagnostics_hvidb_test.json",
+      "bytes": 7935,
+      "mb": 0.01
+    },
+    {
+      "path": "analysis_results/constrained_2104_diagnostics_intact.json",
+      "bytes": 8182,
+      "mb": 0.01
+    },
+    {
+      "path": "analysis_results/constrained_2104_diagnostics_summary.json",
+      "bytes": 3464,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_hvidb_test.json",
+      "bytes": 296123,
+      "mb": 0.28
+    },
+    {
+      "path": "analysis_results/constrained_2104_intact.json",
+      "bytes": 298010,
+      "mb": 0.28
+    },
+    {
+      "path": "analysis_results/constrained_2104_pair_subset_sizes_hvidb_test.json",
+      "bytes": 440,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_pair_subset_sizes_intact.json",
+      "bytes": 446,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_per_query_hvidb_test.npz",
+      "bytes": 27867,
+      "mb": 0.03
+    },
+    {
+      "path": "analysis_results/constrained_2104_per_query_hvidb_val.npz",
+      "bytes": 26635,
+      "mb": 0.03
+    },
+    {
+      "path": "analysis_results/constrained_2104_per_query_intact.npz",
+      "bytes": 32537,
+      "mb": 0.03
+    },
+    {
+      "path": "analysis_results/constrained_2104_recall_curves_baselines_hvidb_test.json",
+      "bytes": 1246,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_recall_curves_baselines_intact.json",
+      "bytes": 1370,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_sensitivity_baselines_extended_hvidb_test.json",
+      "bytes": 2683,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/constrained_2104_sensitivity_baselines_extended_intact.json",
+      "bytes": 2767,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/pair_subset_true_definition_hvidb_test.json",
+      "bytes": 314,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/protocol_comparison.json",
+      "bytes": 788,
+      "mb": 0.0
+    },
+    {
+      "path": "analysis_results/retrieval_rerank_eval.json",
+      "bytes": 294539,
+      "mb": 0.28
+    },
+    {
+      "path": "analysis_results/train_test_virus_overlap.json",
+      "bytes": 366,
+      "mb": 0.0
+    },
+    {
+      "path": "checkpoints/README.txt",
+      "bytes": 345,
+      "mb": 0.0
+    },
+    {
+      "path": "checkpoints/classification_esm3_frozen_best_model.pt",
+      "bytes": 5617130492,
+      "mb": 5356.91
+    },
+    {
+      "path": "checkpoints/retrieval_gnn_tau007_longrun_best_model.pt",
+      "bytes": 5637183612,
+      "mb": 5376.04
+    },
+    {
+      "path": "classification_task/models.py",
+      "bytes": 23707,
+      "mb": 0.02
+    },
+    {
+      "path": "config/__init__.py",
+      "bytes": 0,
+      "mb": 0.0
+    },
+    {
+      "path": "config/config.py",
+      "bytes": 5023,
+      "mb": 0.0
+    },
+    {
+      "path": "data/SV.fasta",
+      "bytes": 10133645,
+      "mb": 9.66
+    },
+    {
+      "path": "data/cross_intact/processed/cross_build_stats.json",
+      "bytes": 626,
+      "mb": 0.0
+    },
+    {
+      "path": "data/cross_intact/processed/val_protein_pairs.pkl",
+      "bytes": 5124173,
+      "mb": 4.89
+    },
+    {
+      "path": "data/processed/test_protein_pairs.pkl",
+      "bytes": 51849166,
+      "mb": 49.45
+    },
+    {
+      "path": "data/processed/train_protein_pairs.pkl",
+      "bytes": 404400963,
+      "mb": 385.67
+    },
+    {
+      "path": "data/processed/val_protein_pairs.pkl",
+      "bytes": 52578549,
+      "mb": 50.14
+    },
+    {
+      "path": "embed_cache/2104_classifier_virus_1115_512.pt",
+      "bytes": 6869578,
+      "mb": 6.55
+    },
+    {
+      "path": "embed_cache/2104_classifier_virus_1229_512.pt",
+      "bytes": 7571786,
+      "mb": 7.22
+    },
+    {
+      "path": "embed_cache/2104_retrieval_virus_1115_512.pt",
+      "bytes": 874417,
+      "mb": 0.83
+    },
+    {
+      "path": "embed_cache/2104_retrieval_virus_1229_512.pt",
+      "bytes": 963057,
+      "mb": 0.92
+    },
+    {
+      "path": "models/__init__.py",
+      "bytes": 0,
+      "mb": 0.0
+    },
+    {
+      "path": "models/base_modules.py",
+      "bytes": 36904,
+      "mb": 0.04
+    },
+    {
+      "path": "models/protein_interaction_model.py",
+      "bytes": 16632,
+      "mb": 0.02
+    },
+    {
+      "path": "retrieval_task/models.py",
+      "bytes": 29802,
+      "mb": 0.03
+    },
+    {
+      "path": "scripts/__pycache__/constrained_2104_diagnostics.cpython-310.pyc",
+      "bytes": 11541,
+      "mb": 0.01
+    },
+    {
+      "path": "scripts/__pycache__/constrained_2104_eval.cpython-310.pyc",
+      "bytes": 10108,
+      "mb": 0.01
+    },
+    {
+      "path": "scripts/__pycache__/necessity_eval.cpython-310.pyc",
+      "bytes": 15974,
+      "mb": 0.02
+    },
+    {
+      "path": "scripts/__pycache__/retrieval_eval_utils.cpython-310.pyc",
+      "bytes": 15955,
+      "mb": 0.02
+    },
+    {
+      "path": "scripts/bib_cluster_and_baselines.py",
+      "bytes": 25876,
+      "mb": 0.02
+    },
+    {
+      "path": "scripts/bootstrap_hvidb_test.py",
+      "bytes": 7452,
+      "mb": 0.01
+    },
+    {
+      "path": "scripts/bootstrap_table3_extra.py",
+      "bytes": 14258,
+      "mb": 0.01
+    },
+    {
+      "path": "scripts/remote_overlap_and_bestoracle_ci.py",
+      "bytes": 2499,
+      "mb": 0.0
+    },
+    {
+      "path": "scripts/run_from_pyc.py",
+      "bytes": 2945,
+      "mb": 0.0
+    },
+    {
+      "path": "scripts/sensitivity_baselines_hvidb_test.py",
+      "bytes": 5664,
+      "mb": 0.01
+    }
+  ]
+}

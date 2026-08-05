@@ -1,0 +1,165 @@
+{
+  "recall_curve": [
+    {
+      "dataset": "HVIDB val",
+      "R@1": "0.1%",
+      "R@5": "0.9%",
+      "R@10": "1.3%",
+      "R@20": "3.2%",
+      "R@50": "7.5%",
+      "R@100": "14.2%"
+    },
+    {
+      "dataset": "IntAct cross",
+      "R@1": "0.3%",
+      "R@5": "1.5%",
+      "R@10": "2.7%",
+      "R@20": "4.9%",
+      "R@50": "10.2%",
+      "R@100": "16.4%"
+    },
+    {
+      "dataset": "HVIDB test",
+      "R@1": "0.3\\%",
+      "R@5": "1.1\\%",
+      "R@10": "2.0\\%",
+      "R@20": "4.1\\%",
+      "R@50": "8.9\\%",
+      "R@100": "15.6\\%"
+    }
+  ],
+  "query_coverage": [
+    {
+      "dataset": "HVIDB val",
+      "total_q": 3000,
+      "in_gallery": 3000,
+      "in_nominal2104": 3000,
+      "not_nominal": 0,
+      "missing": 0
+    },
+    {
+      "dataset": "IntAct cross",
+      "total_q": 4696,
+      "in_gallery": 4696,
+      "in_nominal2104": 1632,
+      "not_nominal": 3064,
+      "missing": 0
+    },
+    {
+      "dataset": "HVIDB test",
+      "total_q": 3000,
+      "in_gallery": 3000,
+      "in_nominal2104": 3000,
+      "not_nominal": 0,
+      "missing": 0
+    }
+  ],
+  "depth_sensitivity": [
+    {
+      "dataset": "HVIDB val",
+      "depth": "20",
+      "fusion_hit@10": "2.1%",
+      "clf_head_hit@10": "2.9%"
+    },
+    {
+      "dataset": "HVIDB val",
+      "depth": "50",
+      "fusion_hit@10": "2.2%",
+      "clf_head_hit@10": "4.1%"
+    },
+    {
+      "dataset": "HVIDB val",
+      "depth": "100",
+      "fusion_hit@10": "2.3%",
+      "clf_head_hit@10": "5.3%"
+    },
+    {
+      "dataset": "HVIDB val",
+      "depth": "200",
+      "fusion_hit@10": "2.6%",
+      "clf_head_hit@10": "6.6%"
+    },
+    {
+      "dataset": "IntAct cross",
+      "depth": "20",
+      "fusion_hit@10": "2.6%",
+      "clf_head_hit@10": "2.0%"
+    },
+    {
+      "dataset": "IntAct cross",
+      "depth": "50",
+      "fusion_hit@10": "2.4%",
+      "clf_head_hit@10": "0.9%"
+    },
+    {
+      "dataset": "IntAct cross",
+      "depth": "100",
+      "fusion_hit@10": "2.3%",
+      "clf_head_hit@10": "0.6%"
+    },
+    {
+      "dataset": "IntAct cross",
+      "depth": "200",
+      "fusion_hit@10": "2.2%",
+      "clf_head_hit@10": "0.6%"
+    }
+  ],
+  "oracle": [
+    {
+      "dataset": "HVIDB val",
+      "recall_thresh": "20",
+      "n_subset": 96,
+      "frac": "3.2%",
+      "fusion_hit@10": "65.6%",
+      "clf_head_hit@10": "89.6%"
+    },
+    {
+      "dataset": "HVIDB val",
+      "recall_thresh": "50",
+      "n_subset": 224,
+      "frac": "7.5%",
+      "fusion_hit@10": "29.9%",
+      "clf_head_hit@10": "55.4%"
+    },
+    {
+      "dataset": "HVIDB val",
+      "recall_thresh": "100",
+      "n_subset": 426,
+      "frac": "14.2%",
+      "fusion_hit@10": "16.4%",
+      "clf_head_hit@10": "37.6%"
+    },
+    {
+      "dataset": "IntAct cross",
+      "recall_thresh": "20",
+      "n_subset": 231,
+      "frac": "4.9%",
+      "fusion_hit@10": "53.7%",
+      "clf_head_hit@10": "40.3%"
+    },
+    {
+      "dataset": "IntAct cross",
+      "recall_thresh": "50",
+      "n_subset": 478,
+      "frac": "10.2%",
+      "fusion_hit@10": "24.1%",
+      "clf_head_hit@10": "8.8%"
+    },
+    {
+      "dataset": "IntAct cross",
+      "recall_thresh": "100",
+      "n_subset": 770,
+      "frac": "16.4%",
+      "fusion_hit@10": "14.0%",
+      "clf_head_hit@10": "3.9%"
+    },
+    {
+      "dataset": "HVIDB test",
+      "recall_thresh": "20",
+      "n_subset": 122,
+      "frac": "4.1\\%",
+      "fusion_hit@10": "63.1\\%",
+      "clf_head_hit@10": "86.9\\%"
+    }
+  ]
+}

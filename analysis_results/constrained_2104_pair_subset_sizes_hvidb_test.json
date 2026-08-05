@@ -1,0 +1,21 @@
+{
+  "definition": "Each query ranked against all unique viral IDs present in the evaluation pair file (not only partners of that human).",
+  "unique_viruses_in_pair_file": 2214,
+  "per_query_gallery_size_constant": true,
+  "median": 2214,
+  "min": 2214,
+  "max": 2214,
+  "iqr": [
+    2214.0,
+    2214.0
+  ],
+  "alt_partners_of_same_human_only": {
+    "median": 2.0,
+    "min": 1,
+    "max": 19,
+    "iqr": [
+      1.0,
+      5.0
+    ]
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "evaluated_at": "2026-08-04T18:15:02.806795",
+  "dataset": "intact",
+  "pairs_pkl": "data/cross_intact/processed/val_protein_pairs.pkl",
+  "n_boot": 2000,
+  "seed": 42,
+  "n_queries": 4696,
+  "n_unique_humans": 2189,
+  "n_unique_viruses": 173,
+  "oracle@20_n": 233,
+  "oracle@20_unique_humans": 176,
+  "oracle@20_unique_viruses": 32,
+  "repeated_human_fraction": 0.5338586030664395,
+  "metrics": {
+    "recall@20": {
+      "query_bootstrap": {
+        "mean": 0.04961669505962521,
+        "ci_low": 0.04386712095400341,
+        "ci_high": 0.05579748722316863,
+        "n": 4696,
+        "unit": "query"
+      },
+      "human_cluster_bootstrap": {
+        "mean": 0.04961669505962521,
+        "ci_low": 0.04210198825475416,
+        "ci_high": 0.057355871168610906,
+        "n_queries": 4696,
+        "n_clusters": 2189,
+        "unit": "human"
+      },
+      "virus_cluster_bootstrap": {
+        "mean": 0.04961669505962521,
+        "ci_low": 0.028126801523829143,
+        "ci_high": 0.080959936005375,
+        "n_queries": 4696,
+        "n_clusters": 173,
+        "unit": "virus"
+      },
+      "table_string_human_cluster": "5.0% [4.2\u20135.7]"
+    },
+    "recall@100": {
+      "query_bootstrap": {
+        "mean": 0.16418228279386712,
+        "ci_low": 0.15374787052810904,
+        "ci_high": 0.17525553662691654,
+        "n": 4696,
+        "unit": "query"
+      },
+      "human_cluster_bootstrap": {
+        "mean": 0.16418228279386712,
+        "ci_low": 0.15172391289233497,
+        "ci_high": 0.17758815037845457,
+        "n_queries": 4696,
+        "n_clusters": 2189,
+        "unit": "human"
+      },
+      "virus_cluster_bootstrap": {
+        "mean": 0.16418228279386712,
+        "ci_low": 0.11821170542981639,
+        "ci_high": 0.22551700879554765,
+        "n_queries": 4696,
+        "n_clusters": 173,
+        "unit": "virus"
+      },
+      "table_string_human_cluster": "16.4% [15.2\u201317.8]"
+    },
+    "retrieval_hit@10": {
+      "query_bootstrap": {
+        "mean": 0.026831345826235094,
+        "ci_low": 0.02235945485519591,
+        "ci_high": 0.03151618398637138,
+        "n": 4696,
+        "unit": "query"
+      },
+      "human_cluster_bootstrap": {
+        "mean": 0.026831345826235094,
+        "ci_low": 0.02161636420211057,
+        "ci_high": 0.03240857063093243,
+        "n_queries": 4696,
+        "n_clusters": 2189,
+        "unit": "human"
+      },
+      "virus_cluster_bootstrap": {
+        "mean": 0.026831345826235094,
+        "ci_low": 0.013670890394241693,
+        "ci_high": 0.04602922449191744,
+        "n_queries": 4696,
+        "n_clusters": 173,
+        "unit": "virus"
+      },
+      "table_string_human_cluster": "2.7% [2.2\u20133.2]"
+    },
+    "fusion_hit@10": {
+      "query_bootstrap": {
+        "mean": 0.02619250425894378,
+        "ci_low": 0.0217206132879046,
+        "ci_high": 0.030877342419080068,
+        "n": 4696,
+        "unit": "query"
+      },
+      "human_cluster_bootstrap": {
+        "mean": 0.02619250425894378,
+        "ci_low": 0.021077495867148924,
+        "ci_high": 0.03185403832022403,
+        "n_queries": 4696,
+        "n_clusters": 2189,
+        "unit": "human"
+      },
+      "virus_cluster_bootstrap": {
+        "mean": 0.02619250425894378,
+        "ci_low": 0.013666638859670914,
+        "ci_high": 0.044757013816830865,
+        "n_queries": 4696,
+        "n_clusters": 173,
+        "unit": "virus"
+      },
+      "table_string_human_cluster": "2.6% [2.1\u20133.2]"
+    },
+    "oracle@20_fusion_hit@10": {
+      "query_bootstrap": {
+        "mean": 0.5278969957081545,
+        "ci_low": 0.463519313304721,
+        "ci_high": 0.592274678111588,
+        "n": 233,
+        "unit": "query"
+      },
+      "human_cluster_bootstrap": {
+        "mean": 0.5278969957081545,
+        "ci_low": 0.45886953955135773,
+        "ci_high": 0.5958497807017543,
+        "n_queries": 233,
+        "n_clusters": 176,
+        "unit": "human"
+      },
+      "virus_cluster_bootstrap": {
+        "mean": 0.5278969957081545,
+        "ci_low": 0.46153846153846156,
+        "ci_high": 0.5797925531914893,
+        "n_queries": 233,
+        "n_clusters": 32,
+        "unit": "virus"
+      },
+      "table_string_human_cluster": "52.8% [45.9\u201359.6]"
+    },
+    "direct_full_gallery_hit@10": {
+      "query_bootstrap": {
+        "mean": 0.002342419080068143,
+        "ci_low": 0.0010647359454855196,
+        "ci_high": 0.0038330494037478705,
+        "n": 4696,
+        "unit": "query"
+      },
+      "human_cluster_bootstrap": {
+        "mean": 0.002342419080068143,
+        "ci_low": 0.0008642902375054287,
+        "ci_high": 0.0040371018324079425,
+        "n_queries": 4696,
+        "n_clusters": 2189,
+        "unit": "human"
+      },
+      "virus_cluster_bootstrap": {
+        "mean": 0.002342419080068143,
+        "ci_low": 0.0,
+        "ci_high": 0.0063462240395025914,
+        "n_queries": 4696,
+        "n_clusters": 173,
+        "unit": "virus"
+      },
+      "table_string_human_cluster": "0.2% [0.1\u20130.4]"
+    }
+  },
+  "primary_reporting": "human_cluster_bootstrap",
+  "notes": [
+    "Primary CIs: resample unique human proteins with replacement; include all queries of selected humans.",
+    "Virus-cluster CIs provided as sensitivity.",
+    "Oracle@20 CIs are conditional on the Stage-1 top-20 subset."
+  ]
+}

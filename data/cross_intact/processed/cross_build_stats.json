@@ -1,0 +1,23 @@
+{
+  "source": "intact",
+  "built_at": "2026-07-11T20:31:01.480647",
+  "intact_path": "data/raw/cross_db/intact.txt",
+  "output_pkl": "data/cross_intact/processed/val_protein_pairs.pkl",
+  "skipped": {
+    "not_human_virus": 1567372,
+    "no_uniprot": 117193,
+    "virus_not_in_hvidb": 66641,
+    "in_hvidb": 13451,
+    "human_not_in_hvidb": 9186
+  },
+  "n_pos_requested": 10683,
+  "n_pos_after_length": 4696,
+  "n_pool_negatives": 12842,
+  "n_total_pairs": 17538,
+  "n_unique_humans": 2189,
+  "n_unique_viruses": 12871,
+  "anchor_human": "P57105",
+  "max_length": 512,
+  "n_positive_pairs": 4696,
+  "n_negative_pairs": 12842
+}

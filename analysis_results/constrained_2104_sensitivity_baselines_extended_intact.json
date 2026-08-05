@@ -1,0 +1,84 @@
+{
+  "evaluated_at": "2026-08-04T18:14:41.861777",
+  "dataset": "intact",
+  "protocol": "fixed_gallery_same_as_table3",
+  "gallery_n": 1229,
+  "n_queries": 4696,
+  "fusion_alpha": 0.7,
+  "rerank_T": 20,
+  "main_stage1_reference": {
+    "recall@20": 0.04961669505962521,
+    "recall@100": 0.16418228279386712,
+    "retrieval_hit@10": 0.026831345826235094,
+    "end_to_end_fusion_hit@10_T20": 0.02619250425894378,
+    "oracle@20_n": 233,
+    "oracle@20_unique_humans": 176,
+    "oracle@20_unique_viruses": 32,
+    "oracle@20_fusion_hit@10": 0.5278969957081545
+  },
+  "baselines": {
+    "virus_popularity_train": {
+      "name": "virus_popularity_train",
+      "recall@20": 0.005323679727427598,
+      "recall@100": 0.034497444633730834,
+      "retrieval_hit@10": 0.002129471890971039,
+      "end_to_end_fusion_hit@10_T20": 0.002342419080068143,
+      "oracle@20_n": 25,
+      "oracle@20_unique_humans": 23,
+      "oracle@20_fusion_hit@10": 0.44,
+      "cluster_human_ci": {
+        "recall@100": {
+          "mean": 0.034497444633730834,
+          "ci_low": 0.02539093745555745,
+          "ci_high": 0.04335169126046109,
+          "n_queries": 4696,
+          "n_clusters": 2189,
+          "unit": "human"
+        },
+        "fusion_hit@10": {
+          "mean": 0.002342419080068143,
+          "ci_low": 0.0010791272611026265,
+          "ci_high": 0.0037967274689623192,
+          "n_queries": 4696,
+          "n_clusters": 2189,
+          "unit": "human"
+        }
+      }
+    },
+    "knn_partner_transfer_3mer_k10": {
+      "name": "knn_partner_transfer_3mer_k10",
+      "recall@20": 0.007666098807495741,
+      "recall@100": 0.0381175468483816,
+      "retrieval_hit@10": 0.004258943781942078,
+      "end_to_end_fusion_hit@10_T20": 0.005110732538330494,
+      "oracle@20_n": 36,
+      "oracle@20_unique_humans": 32,
+      "oracle@20_fusion_hit@10": 0.6666666666666666,
+      "cluster_human_ci": {
+        "recall@100": {
+          "mean": 0.0381175468483816,
+          "ci_low": 0.029194837631372695,
+          "ci_high": 0.047959414988440655,
+          "n_queries": 4696,
+          "n_clusters": 2189,
+          "unit": "human"
+        },
+        "fusion_hit@10": {
+          "mean": 0.005110732538330494,
+          "ci_low": 0.0029995933945364847,
+          "ci_high": 0.0075453856788182455,
+          "n_queries": 4696,
+          "n_clusters": 2189,
+          "unit": "human"
+        }
+      },
+      "k_neighbors": 10,
+      "exclude_same_human_id": true
+    }
+  },
+  "notes": [
+    "Non-learning retrievers scored over the identical fixed retrievable gallery.",
+    "End-to-end fusion Hit@10 uses each baseline's top-20 shortlist then Stage-2 \u03b1=0.7 fusion of baseline score + classifier head.",
+    "Diagnostic comparators, not optimised SOTA systems."
+  ]
+}

@@ -1,7 +1,11 @@
 Large diagnostic checkpoints are not stored on GitHub (file-size limit).
 
-Files (Zenodo / full release on server):
+Download from Zenodo (DOI: 10.5281/zenodo.21809505):
+  https://doi.org/10.5281/zenodo.21809505
+
+Files to place in this directory:
   retrieval_gnn_tau007_longrun_best_model.pt (~5.3 GB)
   classification_esm3_frozen_best_model.pt (~5.3 GB)
 
-See README.md and PUSH.md. After Zenodo deposit, replace this note with the DOI link.
+Also on the same deposit:
+  train_protein_pairs.pkl (~386 MB) → place under data/processed/

@@ -1,7 +1,7 @@
 Large training-pair pickle is not stored on GitHub (file-size limit).
 
-Download from Zenodo (DOI: 10.5281/zenodo.21809505):
-  https://doi.org/10.5281/zenodo.21809505
+Download from Zenodo (DOI: 10.5281/zenodo.21826320):
+  https://doi.org/10.5281/zenodo.21826320
 
 File to place in this directory:
   train_protein_pairs.pkl (~386 MB)

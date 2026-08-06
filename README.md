@@ -1,6 +1,6 @@
 # Protocol-aware partner ranking — diagnostic evaluation resource
 
-**Release:** `v1.0-diagnostic-eval`  
+**Release:** `diagnostic-eval`  
 **GitHub:** https://github.com/Xindi-Wang1004/protocol-aware-partner-ranking-eval  
 **Companion to:** *Protocol-aware benchmarking of constrained biological partner ranking: a case study in virus–host PPI* (Briefings in Bioinformatics, Problem Solving Protocol).
 
@@ -29,7 +29,7 @@ This repository provides the **frozen diagnostic retrieve-then-rerank stack** us
 
 - Upstream sources: [HVIDB](https://doi.org/10.1093/bib/bbaa425), [IntAct](https://doi.org/10.1093/nar/gkt1115)
 - Large binaries (checkpoints + `train_protein_pairs.pkl`): [Zenodo](https://doi.org/10.5281/zenodo.21809505) (`10.5281/zenodo.21809505`)
-- Code + lightweight processed files: this GitHub repository (release `v1.0-diagnostic-eval`)
+- Code + lightweight processed files: this GitHub repository (release `diagnostic-eval`)
 - Code license: MIT · Processed data: CC BY 4.0
 
 ## Reproduce

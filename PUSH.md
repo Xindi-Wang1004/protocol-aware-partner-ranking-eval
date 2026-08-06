@@ -14,11 +14,11 @@ rsync -a --exclude 'checkpoints/*.pt' --exclude 'data/processed/train_protein_pa
 cd github_repo
 printf 'Binaries on Zenodo — see README.\n' > checkpoints/DOWNLOAD.txt
 printf 'train_protein_pairs.pkl on Zenodo (~386 MB).\n' > data/processed/DOWNLOAD.txt
-git init && git add . && git commit -m "v1.0-diagnostic-eval: code, embeds, results"
+git init && git add . && git commit -m "diagnostic-eval: code, embeds, results"
 # create repo on GitHub, then:
 # git remote add origin git@github.com:YOUR_USER/protocol-aware-partner-ranking-eval.git
 # git branch -M main && git push -u origin main
-# git tag v1.0-diagnostic-eval && git push origin v1.0-diagnostic-eval
+# git tag diagnostic-eval && git push origin diagnostic-eval
 # Pages: Settings → main → /docs
 ```
 

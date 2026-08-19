@@ -1,7 +1,7 @@
 Large diagnostic checkpoints are not stored on GitHub (file-size limit).
 
-Download from Zenodo (DOI: 10.5281/zenodo.21826320):
-  https://doi.org/10.5281/zenodo.21826320
+Download from Zenodo (DOI: 10.5281/zenodo.22009119):
+  https://doi.org/10.5281/zenodo.22009119
 
 Files to place in this directory:
   retrieval_gnn_tau007_longrun_best_model.pt (~5.3 GB)

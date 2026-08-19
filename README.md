@@ -1,6 +1,6 @@
 # Protocol-aware partner ranking — diagnostic evaluation resource
 
-**Releases:** `diagnostic-eval` (frozen PPI stack) · `partner-rank-eval-v0.1.0` (reporting CLI)  
+**Releases:** `diagnostic-eval` (frozen PPI stack) · `partner-rank-eval` (reporting CLI)  
 **GitHub:** https://github.com/Xindi-Wang1004/protocol-aware-partner-ranking-eval  
 **Companion to:** *Protocol-aware benchmarking of constrained biological partner ranking: a case study in virus–host PPI*.
 
@@ -29,8 +29,8 @@ This repository provides the **frozen diagnostic retrieve-then-rerank stack** us
 ## Data availability (BIB)
 
 - Upstream sources: [HVIDB](https://doi.org/10.1093/bib/bbaa425), [IntAct](https://doi.org/10.1093/nar/gkt1115)
-- Large binaries (checkpoints + `train_protein_pairs.pkl`): [Zenodo](https://doi.org/10.5281/zenodo.21826320) (`10.5281/zenodo.21826320`)
-- Code + lightweight processed files: this GitHub repository (releases `diagnostic-eval` and `partner-rank-eval-v0.1.0`)
+- Large binaries (checkpoints + `train_protein_pairs.pkl`): [Zenodo](https://doi.org/10.5281/zenodo.22009119) (`10.5281/zenodo.22009119`)
+- Code + lightweight processed files: this GitHub repository (releases `diagnostic-eval` and `partner-rank-eval`)
 - Code license: MIT · Processed data: CC BY 4.0
 
 ## Reproduce
@@ -45,8 +45,8 @@ Wang X, Li Y, Hon C. Protocol-aware benchmarking of constrained biological partn
 
 Checkpoints (~5.3 GB each) and `train_protein_pairs.pkl` (~386 MB) are on Zenodo:
 
-- **DOI:** https://doi.org/10.5281/zenodo.21826320
-- Record: https://zenodo.org/records/21826320
+- **DOI:** https://doi.org/10.5281/zenodo.22009119
+- Record: https://zenodo.org/records/22009119
 
 Place downloaded files under `checkpoints/` and `data/processed/` as named in `checkpoints/DOWNLOAD.txt` and `data/processed/DOWNLOAD.txt`.
 

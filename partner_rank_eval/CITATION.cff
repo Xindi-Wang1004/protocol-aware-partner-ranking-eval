@@ -6,7 +6,15 @@ authors:
   - family-names: Wang
     given-names: Xindi
     orcid: "https://orcid.org/0009-0003-5042-9534"
-version: 0.1.0
+  - family-names: Luo
+    given-names: Junyu
+    orcid: "https://orcid.org/0000-0003-2206-1931"
+  - family-names: Li
+    given-names: Yixue
+    orcid: "https://orcid.org/0000-0002-1198-7176"
+  - family-names: Hon
+    given-names: Chitin
+    orcid: "https://orcid.org/0000-0002-5658-3503"
 date-released: "2026-08-19"
 license: MIT
 repository-code: "https://github.com/Xindi-Wang1004/protocol-aware-partner-ranking-eval"

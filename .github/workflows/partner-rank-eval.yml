@@ -1,0 +1,24 @@
+name: partner-rank-eval
+on:
+  push:
+    paths:
+      - "partner_rank_eval/**"
+      - ".github/workflows/partner-rank-eval.yml"
+  pull_request:
+    paths:
+      - "partner_rank_eval/**"
+      - ".github/workflows/partner-rank-eval.yml"
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: partner_rank_eval
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m pytest -q
+      - run: partner-rank-eval --version

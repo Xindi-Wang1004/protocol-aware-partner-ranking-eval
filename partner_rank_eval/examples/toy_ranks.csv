@@ -1,0 +1,9 @@
+query_id,true_id,retrieval_rank,rerank_rank,gallery_size,in_gallery
+q0,t,2,1,1000,true
+q1,t,15,9,1000,true
+q2,t,80,,1000,true
+q3,t,4,12,1000,true
+q4,t,1,3,1000,true
+q5,t,400,,1000,true
+q6,t,18,7,1000,true
+q7,t,9,2,1000,true

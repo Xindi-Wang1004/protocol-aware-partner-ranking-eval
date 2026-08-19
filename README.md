@@ -1,19 +1,20 @@
 # Protocol-aware partner ranking — diagnostic evaluation resource
 
-**Release:** `diagnostic-eval`  
+**Releases:** `diagnostic-eval` (frozen PPI stack) · `partner-rank-eval-v0.1.0` (reporting CLI)  
 **GitHub:** https://github.com/Xindi-Wang1004/protocol-aware-partner-ranking-eval  
-**Companion to:** *Protocol-aware benchmarking of constrained biological partner ranking: a case study in virus–host PPI* (Briefings in Bioinformatics, Problem Solving Protocol).
+**Companion to:** *Protocol-aware benchmarking of constrained biological partner ranking: a case study in virus–host PPI*.
 
-This repository provides the **frozen diagnostic retrieve-then-rerank stack** used in the manuscript (not a new SOTA predictor).
+This repository provides the **frozen diagnostic retrieve-then-rerank stack** used in the manuscript (not a new SOTA predictor), plus **`partner_rank_eval/`**, a small reporting CLI that turns per-query ranks into Recall@T / oracle@K / Hit@K, the definitional identity residual, and a fillable reporting-checklist JSON (manuscript Table 6).
 
 ## Contents
 
 | Path | Description |
 |------|-------------|
+| `partner_rank_eval/` | Reporting CLI (`pip install -e .`; `partner-rank-eval metrics\|simulate\|checklist`). See `partner_rank_eval/TUTORIAL.md`. |
 | `checkpoints/` | Retrieval (`gnn_tau007_longrun`) and classification (`esm3_frozen`) diagnostic checkpoints |
 | `embed_cache/` | Precomputed HVIDB-2104 virus gallery embeddings |
 | `data/` | Processed HVIDB train/val/test and IntAct cross-test pair files; `SV.fasta` |
-| `scripts/` | Evaluation / bootstrap / baseline scripts used for Tables 3–5 and supplements |
+| `scripts/` | Evaluation / bootstrap / baseline scripts used for Tables 3–6 and supplements |
 | `models/`, `config/` | Minimal Python modules to instantiate/load checkpoints |
 | `PUSH.md` | How to publish to GitHub + Zenodo |
 | `analysis_results/` | Published JSON/NPZ underlying manuscript tables and figures |
@@ -29,7 +30,7 @@ This repository provides the **frozen diagnostic retrieve-then-rerank stack** us
 
 - Upstream sources: [HVIDB](https://doi.org/10.1093/bib/bbaa425), [IntAct](https://doi.org/10.1093/nar/gkt1115)
 - Large binaries (checkpoints + `train_protein_pairs.pkl`): [Zenodo](https://doi.org/10.5281/zenodo.21826320) (`10.5281/zenodo.21826320`)
-- Code + lightweight processed files: this GitHub repository (release `diagnostic-eval`)
+- Code + lightweight processed files: this GitHub repository (releases `diagnostic-eval` and `partner-rank-eval-v0.1.0`)
 - Code license: MIT · Processed data: CC BY 4.0
 
 ## Reproduce

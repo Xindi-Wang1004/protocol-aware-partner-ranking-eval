@@ -1,0 +1,13 @@
+include LICENSE
+include README.md
+include TUTORIAL.md
+include CLI_INTERFACE.md
+include CITATION.cff
+include CHANGELOG.md
+recursive-include examples *
+recursive-include tests *
+exclude examples/figures/*.pdf
+global-exclude .venv
+global-exclude __pycache__
+global-exclude *.pyc
+global-exclude .pytest_cache

@@ -1,0 +1,8 @@
+{"query_id": "q0", "true_id": "t", "retrieval_rank": 2, "rerank_rank": 1, "gallery_size": 1000, "in_gallery": true}
+{"query_id": "q1", "true_id": "t", "retrieval_rank": 15, "rerank_rank": 9, "gallery_size": 1000, "in_gallery": true}
+{"query_id": "q2", "true_id": "t", "retrieval_rank": 80, "rerank_rank": null, "gallery_size": 1000, "in_gallery": true}
+{"query_id": "q3", "true_id": "t", "retrieval_rank": 4, "rerank_rank": 12, "gallery_size": 1000, "in_gallery": true}
+{"query_id": "q4", "true_id": "t", "retrieval_rank": 1, "rerank_rank": 3, "gallery_size": 1000, "in_gallery": true}
+{"query_id": "q5", "true_id": "t", "retrieval_rank": 400, "rerank_rank": null, "gallery_size": 1000, "in_gallery": true}
+{"query_id": "q6", "true_id": "t", "retrieval_rank": 18, "rerank_rank": 7, "gallery_size": 1000, "in_gallery": true}
+{"query_id": "q7", "true_id": "t", "retrieval_rank": 9, "rerank_rank": 2, "gallery_size": 1000, "in_gallery": true}

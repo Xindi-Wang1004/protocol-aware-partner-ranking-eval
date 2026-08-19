@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "partner-rank-eval"
+version = "0.1.0"
+description = "Protocol-aware metrics, decomposition, and reporting for constrained biological partner ranking"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Xindi Wang"}]
+keywords = [
+  "evaluation",
+  "ranking",
+  "bioinformatics",
+  "retrieve-then-rerank",
+  "reporting-standard",
+]
+dependencies = ["numpy>=1.23"]
+
+[project.urls]
+Homepage = "https://github.com/Xindi-Wang1004/protocol-aware-partner-ranking-eval"
+Repository = "https://github.com/Xindi-Wang1004/protocol-aware-partner-ranking-eval"
+Issues = "https://github.com/Xindi-Wang1004/protocol-aware-partner-ranking-eval/issues"
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.7"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+partner-rank-eval = "partner_rank_eval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

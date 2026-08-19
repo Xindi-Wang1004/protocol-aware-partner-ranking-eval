@@ -1,0 +1,40 @@
+{
+  "dataset": "HVIDB test",
+  "n_queries": 3000,
+  "gallery_n": 1115,
+  "T": 20,
+  "K": 10,
+  "alpha": 0.7,
+  "note": "Frozen aggregates for the definitional identity Hit@K = Recall@T × oracle@K. Not a model ranking.",
+  "arms": [
+    {
+      "name": "GNN Stage-1 (main)",
+      "recall@20": 0.04066666666666666,
+      "oracle@K": 0.6311475409836066,
+      "end_to_end_hit@K": 0.025666666666666667,
+      "n_oracle_subset": 122
+    },
+    {
+      "name": "virus_popularity_train",
+      "recall@20": 0.2643333333333333,
+      "oracle@K": 0.6557377049180327,
+      "end_to_end_hit@K": 0.17333333333333334,
+      "n_oracle_subset": 793
+    },
+    {
+      "name": "knn_partner_transfer_3mer_k10",
+      "recall@20": 0.28633333333333333,
+      "oracle@K": 0.6752037252619325,
+      "end_to_end_hit@K": 0.19333333333333333,
+      "n_oracle_subset": 859
+    },
+    {
+      "name": "esm3_frozen_cosine",
+      "recall@20": 0.008333333333333333,
+      "oracle@K": 0.76,
+      "end_to_end_hit@K": 0.006333333333333333,
+      "n_oracle_subset": 25,
+      "note": "small oracle n; conditional diagnostic only"
+    }
+  ]
+}

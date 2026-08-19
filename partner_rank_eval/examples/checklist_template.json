@@ -1,0 +1,68 @@
+{
+  "standard": "protocol-aware minimum reporting for constrained biological partner ranking",
+  "version": "0.1.0",
+  "n_items": 10,
+  "n_reported": 0,
+  "items": [
+    {
+      "id": "nominal_universe",
+      "item": "Nominal biological universe stated (what the claim is about)",
+      "value": null,
+      "reported": false
+    },
+    {
+      "id": "evaluation_gallery",
+      "item": "Stated evaluation gallery and its size (what was actually ranked against)",
+      "value": null,
+      "reported": false
+    },
+    {
+      "id": "retrievable_gallery",
+      "item": "Retrievable gallery (scoreable subset) distinguished from the nominal universe",
+      "value": null,
+      "reported": false
+    },
+    {
+      "id": "reachability",
+      "item": "Reachability: fraction of labelled true partners present in the retrievable gallery",
+      "value": null,
+      "reported": false
+    },
+    {
+      "id": "protocol",
+      "item": "Protocol named: pair-subset vs fixed-gallery vs other",
+      "value": null,
+      "reported": false
+    },
+    {
+      "id": "retrieval_recall",
+      "item": "Stage-1 retrieval Recall@T (and T) if a shortlist is used",
+      "value": null,
+      "reported": false
+    },
+    {
+      "id": "end_to_end_hit",
+      "item": "End-to-end Hit@K on the stated gallery (and K)",
+      "value": null,
+      "reported": false
+    },
+    {
+      "id": "oracle",
+      "item": "Oracle@T: conditional Hit@K on queries whose true partner entered the top-T shortlist",
+      "value": null,
+      "reported": false
+    },
+    {
+      "id": "identity_check",
+      "item": "Report Recall@T \u00d7 oracle@K next to end-to-end Hit@K (should match when K \u2264 T)",
+      "value": null,
+      "reported": false
+    },
+    {
+      "id": "model_role",
+      "item": "Model role stated: diagnostic vehicle vs proposed predictor; no SOTA claim unless a comparison protocol is fully specified",
+      "value": null,
+      "reported": false
+    }
+  ]
+}

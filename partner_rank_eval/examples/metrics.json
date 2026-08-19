@@ -1,0 +1,107 @@
+{
+  "metrics": {
+    "n_queries": 8,
+    "n_reachable": 8,
+    "reachability": 1.0,
+    "T": 20,
+    "K": 10,
+    "recall@T": 0.75,
+    "retrieval_hit@K": 0.5,
+    "oracle@K": 0.8333333333333334,
+    "end_to_end_hit@K": 0.625,
+    "recall_x_oracle": 0.625,
+    "identity_abs_error": 0.0,
+    "n_oracle_subset": 6,
+    "gallery_factor": 0.001,
+    "gate_factor": 0.25
+  },
+  "decomposition": {
+    "headline_hit@K": 0.625,
+    "gate_factor_missed_by_retrieval": 0.25,
+    "retrieval_coverage_recall@T": 0.75,
+    "conditional_rerank_oracle@K": 0.8333333333333334,
+    "candidate_set_note": "headline Hit@K is also not comparable across studies unless the evaluation gallery (and its size) is stated"
+  },
+  "checklist": {
+    "standard": "protocol-aware minimum reporting for constrained biological partner ranking",
+    "version": "0.1.0",
+    "n_items": 10,
+    "n_reported": 7,
+    "items": [
+      {
+        "id": "nominal_universe",
+        "item": "Nominal biological universe stated (what the claim is about)",
+        "value": null,
+        "reported": false
+      },
+      {
+        "id": "evaluation_gallery",
+        "item": "Stated evaluation gallery and its size (what was actually ranked against)",
+        "value": "toy gallery n=1000",
+        "reported": true
+      },
+      {
+        "id": "retrievable_gallery",
+        "item": "Retrievable gallery (scoreable subset) distinguished from the nominal universe",
+        "value": null,
+        "reported": false
+      },
+      {
+        "id": "reachability",
+        "item": "Reachability: fraction of labelled true partners present in the retrievable gallery",
+        "value": 1.0,
+        "reported": true
+      },
+      {
+        "id": "protocol",
+        "item": "Protocol named: pair-subset vs fixed-gallery vs other",
+        "value": "fixed-gallery",
+        "reported": true
+      },
+      {
+        "id": "retrieval_recall",
+        "item": "Stage-1 retrieval Recall@T (and T) if a shortlist is used",
+        "value": {
+          "T": 20,
+          "recall@T": 0.75
+        },
+        "reported": true
+      },
+      {
+        "id": "end_to_end_hit",
+        "item": "End-to-end Hit@K on the stated gallery (and K)",
+        "value": {
+          "K": 10,
+          "hit@K": 0.625
+        },
+        "reported": true
+      },
+      {
+        "id": "oracle",
+        "item": "Oracle@T: conditional Hit@K on queries whose true partner entered the top-T shortlist",
+        "value": {
+          "K": 10,
+          "oracle@K": 0.8333333333333334,
+          "n_subset": 6
+        },
+        "reported": true
+      },
+      {
+        "id": "identity_check",
+        "item": "Report Recall@T \u00d7 oracle@K next to end-to-end Hit@K (should match when K \u2264 T)",
+        "value": {
+          "recall_x_oracle": 0.625,
+          "end_to_end_hit@K": 0.625,
+          "abs_error": 0.0
+        },
+        "reported": true
+      },
+      {
+        "id": "model_role",
+        "item": "Model role stated: diagnostic vehicle vs proposed predictor; no SOTA claim unless a comparison protocol is fully specified",
+        "value": null,
+        "reported": false
+      }
+    ]
+  }
+}

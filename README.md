@@ -39,7 +39,7 @@ See `REPRODUCE.md`.
 
 ## Citation
 
-Wang X, Li Y, Hon C. Protocol-aware benchmarking of constrained biological partner ranking: a case study in virus–host PPI. *Briefings in Bioinformatics* (submitted).
+Wang X, Luo J, Li Y, Hon C. Protocol-aware benchmarking of constrained biological partner ranking: a case study in virus–host PPI.
 
 ## Large files
 

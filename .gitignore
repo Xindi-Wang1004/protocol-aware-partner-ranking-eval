@@ -1,0 +1,4 @@
+data/processed/train_protein_pairs.pkl
+checkpoints/*.pt
+__pycache__/
+*.pyc

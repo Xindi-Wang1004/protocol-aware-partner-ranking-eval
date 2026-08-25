@@ -1,0 +1,34 @@
+{
+  "definition": "True partner virus ID not in train positive virus set",
+  "n_queries": 41,
+  "n_total_test": 3000,
+  "frac_of_test": 0.013666666666666667,
+  "n_unique_novel_viruses": 39,
+  "n_unique_humans": 33,
+  "fixed_gallery": {
+    "recall@20": 0.04878048780487805,
+    "recall@100": 0.14634146341463414,
+    "retrieval_hit@10": 0.024390243902439025,
+    "fusion_hit@10": 0.024390243902439025,
+    "oracle@20_n": 2,
+    "oracle@20_fusion_hit@10": 0.5,
+    "identity_residual_note": "Hit@10 \u2248 Recall@20 \u00d7 oracle@20 on subset when K<=T",
+    "recall20_x_oracle20": 0.024390243902439025,
+    "identity_abs_error_vs_fusion": 0.0
+  },
+  "pair_subset_popularity_diagnostic": {
+    "hit@1": 0.3902439024390244,
+    "hit@10": 0.9512195121951219,
+    "mrr": 0.5829203078127038,
+    "median_gallery": 2.0,
+    "p_gallery_leq_10": 0.926829268292683
+  },
+  "hit10_inflation_ps_over_fg": 39.0,
+  "full_test_reference": {
+    "recall@20": 0.04066666666666666,
+    "recall@100": 0.156,
+    "fusion_hit@10": 0.025666666666666667,
+    "oracle@20_n": 122,
+    "oracle@20_fusion_hit@10": 0.6311475409836066
+  }
+}

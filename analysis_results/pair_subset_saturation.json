@@ -1,0 +1,107 @@
+{
+  "hvidb_test": {
+    "n_queries": 3000,
+    "gallery_median": 2.0,
+    "gallery_iqr": [
+      1.0,
+      5.0
+    ],
+    "gallery_min": 1,
+    "gallery_max": 19,
+    "p_gallery_leq_10": 0.8506666666666667,
+    "hit@1": 0.5373333333333333,
+    "hit@10": 0.954,
+    "mrr": 0.6874174437963139,
+    "mean_percentile_rank": 0.7686666666666667,
+    "dataset": "HVIDB held-out test",
+    "ranking": "train_virus_popularity_within_label_informed_gallery"
+  },
+  "intact": {
+    "n_queries": 4696,
+    "gallery_median": 3.0,
+    "gallery_iqr": [
+      1.0,
+      7.0
+    ],
+    "gallery_min": 1,
+    "gallery_max": 29,
+    "p_gallery_leq_10": 0.9644378194207837,
+    "hit@1": 0.4661413969335605,
+    "hit@10": 0.987862010221465,
+    "mrr": 0.6464587575762697,
+    "mean_percentile_rank": 0.7330706984667802,
+    "dataset": "IntAct cross-test",
+    "ranking": "train_virus_popularity_within_label_informed_gallery"
+  },
+  "bindingdb": {
+    "dataset": "BindingDB target-level (n=156)",
+    "ranking": "diagnostic Stage-1 + popularity fusion (\u03b1=0.7) within pair-subset",
+    "arms": {
+      "popularity": {
+        "n_queries": 156,
+        "gallery_median": 12.5,
+        "gallery_iqr": [
+          3.0,
+          51.5
+        ],
+        "gallery_min": 1,
+        "gallery_max": 777,
+        "p_gallery_leq_10": 0.46153846153846156,
+        "hit@1": 0.23076923076923078,
+        "hit@10": 0.5833333333333334,
+        "mrr": 0.34323897178668217,
+        "mean_percentile_rank": 0.5696109668357213,
+        "arm": "popularity",
+        "ligand_fingerprint": "morgan_r2_2048_hashfallback_23"
+      },
+      "knn3mer_k10": {
+        "n_queries": 156,
+        "gallery_median": 12.5,
+        "gallery_iqr": [
+          3.0,
+          51.5
+        ],
+        "gallery_min": 1,
+        "gallery_max": 777,
+        "p_gallery_leq_10": 0.46153846153846156,
+        "hit@1": 0.23076923076923078,
+        "hit@10": 0.5897435897435898,
+        "mrr": 0.3502852077950247,
+        "mean_percentile_rank": 0.5804644714688529,
+        "arm": "knn3mer_k10",
+        "ligand_fingerprint": "morgan_r2_2048_hashfallback_23"
+      },
+      "cosine_3mer_to_fp": {
+        "n_queries": 156,
+        "gallery_median": 12.5,
+        "gallery_iqr": [
+          3.0,
+          51.5
+        ],
+        "gallery_min": 1,
+        "gallery_max": 777,
+        "p_gallery_leq_10": 0.46153846153846156,
+        "hit@1": 0.21153846153846154,
+        "hit@10": 0.6089743589743589,
+        "mrr": 0.33816522400834564,
+        "mean_percentile_rank": 0.5927553578380981,
+        "arm": "cosine_3mer_to_fp",
+        "ligand_fingerprint": "morgan_r2_2048_hashfallback_23"
+      }
+    },
+    "headline_arm": "knn3mer_k10"
+  },
+  "notes": {
+    "label_informed_gallery": "Query-specific candidate set constructed from the query's known positive interaction partners in the evaluation file.",
+    "hvidb_fusion_hit10_main_text": {
+      "HVIDB": 0.913,
+      "IntAct": 0.857,
+      "source": "Supplementary Table S5 / protocol_comparison.json"
+    },
+    "hvidb_fusion_mrr_protocol_comparison": {
+      "HVIDB_val_pair_subset": 0.6139,
+      "IntAct_pair_subset": 0.5217,
+      "note": "Existing fusion MRR under pair-subset; Hit@1/percentile newly computed via train-popularity diagnostic within the same galleries."
+    }
+  }
+}

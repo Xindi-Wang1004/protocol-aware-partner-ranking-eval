@@ -50,9 +50,33 @@ def main() -> None:
 
     repo = args.repo
     sys.path.insert(0, str(repo))
-    sys.path.insert(0, str(repo / "scripts"))
-    import retrieval_eval_utils as reu  # type: ignore
-    import necessity_eval as ne  # type: ignore
+    scripts = repo / "scripts"
+    sys.path.insert(0, str(scripts))
+
+    def _load_mod(name: str):
+        import importlib
+        import importlib.util
+        try:
+            return importlib.import_module(name)
+        except ModuleNotFoundError:
+            pass
+        # Fall back to __pycache__/*.pyc (source .py may be withheld from release)
+        cache = scripts / "__pycache__"
+        cands = sorted(cache.glob(f"{name}.cpython-*.pyc")) if cache.exists() else []
+        if not cands:
+            raise ModuleNotFoundError(name)
+        # Prefer matching current interpreter tag
+        tag = f"cpython-{sys.version_info.major}{sys.version_info.minor}"
+        pick = next((c for c in cands if tag in c.name), cands[-1])
+        spec = importlib.util.spec_from_file_location(name, pick)
+        mod = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(mod)
+        sys.modules[name] = mod
+        return mod
+
+    reu = _load_mod("retrieval_eval_utils")
+    ne = _load_mod("necessity_eval")
 
     work = args.mmseqs_dir
     hits_path = work / "mmseqs_hits.tsv"

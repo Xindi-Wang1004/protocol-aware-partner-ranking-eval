@@ -7,15 +7,15 @@
     "alpha": 0.7,
     "T": 20,
     "K": 10,
-    "stage2_channel": "train_virus_popularity_on_shortlist",
-    "note": "Neural Stage-2 checkpoint not re-run locally; shortlist fusion uses the same \u03b1/T/K recipe as BindingDB diagnostics (popularity channel) so the framework can audit an external rank file end-to-end."
+    "stage2_channel": "classification_esm3_frozen_classifier_head",
+    "note": "Neural Stage-2 completed; popularity-channel numbers retained under popularity_stage2_legacy key."
   },
   "recall@20": 0.015333333333333332,
   "recall@100": 0.049666666666666665,
   "retrieval_hit@10": 0.008666666666666666,
-  "end_to_end_fusion_hit@10_T20": 0.013333333333333334,
+  "end_to_end_fusion_hit@10_T20": 0.011,
   "oracle@20_n": 46,
-  "oracle@20_fusion_hit@10": 0.8695652173913043,
+  "oracle@20_fusion_hit@10": 0.717391304347826,
   "identity_abs_error": 1.734723475976807e-18,
   "n_queries_with_any_mmseqs_hit": 2990,
   "rank_csv": "/Users/wangxindi/Desktop/\u65b0\u6587\u7ae02/bib_0802/transfer_bioinformatics/analysis/mmseqs_hvidb_test/mmseqs_partner_ranks.csv",
@@ -34,5 +34,31 @@
     "n_oracle_subset": 46,
     "gallery_factor": 0.0008968609865470804,
     "gate_factor": 0.9846666666666667
+  },
+  "neural_stage2": {
+    "method": "MMseqs2 Stage-1 + neural Stage-2 fusion (\u03b1=0.7, T=20)",
+    "n_queries": 3000,
+    "gallery_n": 1115,
+    "fusion": {
+      "alpha": 0.7,
+      "T": 20,
+      "K": 10,
+      "stage2_channel": "classification_esm3_frozen_classifier_head",
+      "checkpoint": "/home/wangxindi/protein_interaction_model/classification_task/esm3_frozen/best_model.pt"
+    },
+    "recall@20": 0.015333333333333332,
+    "recall@100": 0.049666666666666665,
+    "retrieval_hit@10": 0.008666666666666666,
+    "end_to_end_fusion_hit@10_T20": 0.011,
+    "end_to_end_replace_hit@10_T20": 0.013333333333333334,
+    "oracle@20_n": 46,
+    "oracle@20_fusion_hit@10": 0.717391304347826,
+    "oracle@20_replace_hit@10": 0.8695652173913043,
+    "identity_abs_error": 0.0,
+    "rank_csv": "analysis_results/mmseqs_hvidb_test/mmseqs_partner_ranks_neural_stage2.csv"
+  },
+  "popularity_stage2_legacy": {
+    "end_to_end_fusion_hit@10_T20": 0.013333333333333334,
+    "oracle@20_fusion_hit@10": 0.8695652173913043
   }
 }

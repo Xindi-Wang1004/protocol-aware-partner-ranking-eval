@@ -1,0 +1,31 @@
+{
+  "definition": {
+    "strict_gallery": "Sequence-available HVIDB-2104 viruses only (n=1,115); no IntAct non-nominal augmentation.",
+    "unreachable": "True partner absent from the strict gallery; contributes 0 to end-to-end Hit@K and is excluded from Recall@T|reachable / oracle@T.",
+    "ranking_note": "Per-query Stage-1/Stage-2 indicators for reachable queries are taken from the deposited augmented-gallery (n=1,229) evaluation; removing the 114 non-nominal decoys can only improve or leave unchanged a reachable query's rank, so reported reachable-subset rates are conservative lower bounds under the strict gallery."
+  },
+  "n_queries": 4696,
+  "strict_gallery_n": 1115,
+  "augmented_gallery_n": 1229,
+  "n_augmented_extra_ids": 114,
+  "natural_reachability_nominal_membership_proxy": 0.3475298126064736,
+  "n_reachable": 1632,
+  "augmented_operational": {
+    "reachability": 1.0,
+    "recall@20": 0.04961669505962521,
+    "recall@100": 0.16418228279386712,
+    "fusion_hit@10": 0.02619250425894378
+  },
+  "strict_nominal_sequence_gallery": {
+    "reachability": 0.3475298126064736,
+    "recall@20_all_queries_unreachable_as_miss": 0.02768313458262351,
+    "recall@100_all_queries_unreachable_as_miss": 0.07985519591141398,
+    "fusion_hit@10_all_queries": 0.015545144804088586,
+    "recall@20_reachable_only": 0.07965686274509803,
+    "recall@100_reachable_only": 0.22977941176470587,
+    "fusion_hit@10_reachable_only": 0.044730392156862746,
+    "oracle@20_n_reachable": 130,
+    "oracle@20_fusion_hit@10": 0.5615384615384615,
+    "identity_abs_error_vs_reach_x_R20_x_oracle": 1.734723475976807e-18
+  }
+}

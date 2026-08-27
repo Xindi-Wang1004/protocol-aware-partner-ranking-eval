@@ -53,30 +53,47 @@ def main() -> None:
     scripts = repo / "scripts"
     sys.path.insert(0, str(scripts))
 
-    def _load_mod(name: str):
-        import importlib
-        import importlib.util
-        try:
-            return importlib.import_module(name)
-        except ModuleNotFoundError:
-            pass
-        # Fall back to __pycache__/*.pyc (source .py may be withheld from release)
-        cache = scripts / "__pycache__"
-        cands = sorted(cache.glob(f"{name}.cpython-*.pyc")) if cache.exists() else []
-        if not cands:
-            raise ModuleNotFoundError(name)
-        # Prefer matching current interpreter tag
-        tag = f"cpython-{sys.version_info.major}{sys.version_info.minor}"
-        pick = next((c for c in cands if tag in c.name), cands[-1])
-        spec = importlib.util.spec_from_file_location(name, pick)
-        mod = importlib.util.module_from_spec(spec)
-        assert spec.loader is not None
-        spec.loader.exec_module(mod)
+    import types
+    import importlib.util
+    from importlib.machinery import SourcelessFileLoader
+
+    def _ensure_scripts_pkg():
+        pkg = sys.modules.get("scripts")
+        if pkg is None:
+            pkg = types.ModuleType("scripts")
+            pkg.__path__ = [str(scripts)]
+            sys.modules["scripts"] = pkg
+        return pkg
+
+    def _load_into_scripts(name: str):
+        """Load helpers as scripts.<name> so necessity_eval can import them."""
+        pkg = _ensure_scripts_pkg()
+        py = scripts / f"{name}.py"
+        if py.exists():
+            spec = importlib.util.spec_from_file_location(f"scripts.{name}", py)
+            mod = importlib.util.module_from_spec(spec)
+            sys.modules[f"scripts.{name}"] = mod
+            assert spec.loader is not None
+            spec.loader.exec_module(mod)
+        else:
+            cache = scripts / "__pycache__"
+            tag = f"cpython-{sys.version_info.major}{sys.version_info.minor}"
+            cands = sorted(cache.glob(f"{name}.cpython-*.pyc")) if cache.exists() else []
+            if not cands:
+                raise ModuleNotFoundError(name)
+            pick = next((c for c in cands if tag in c.name), cands[-1])
+            loader = SourcelessFileLoader(f"scripts.{name}", str(pick))
+            spec = importlib.util.spec_from_loader(f"scripts.{name}", loader)
+            mod = importlib.util.module_from_spec(spec)
+            sys.modules[f"scripts.{name}"] = mod
+            assert spec.loader is not None
+            spec.loader.exec_module(mod)
+        setattr(pkg, name, mod)
         sys.modules[name] = mod
         return mod
 
-    reu = _load_mod("retrieval_eval_utils")
-    ne = _load_mod("necessity_eval")
+    reu = _load_into_scripts("retrieval_eval_utils")
+    ne = _load_into_scripts("necessity_eval")
 
     work = args.mmseqs_dir
     hits_path = work / "mmseqs_hits.tsv"

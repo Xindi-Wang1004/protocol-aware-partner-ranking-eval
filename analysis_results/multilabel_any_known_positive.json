@@ -1,0 +1,66 @@
+{
+  "hvidb_test": {
+    "label": "HVIDB test (pair-held-out)",
+    "n_queries": 3000,
+    "n_unique_humans": 1612,
+    "frac_queries_multi_positive": 0.644,
+    "frac_humans_multi_positive": 0.337468982630273,
+    "mean_known_positives_per_query": 4.352666666666667,
+    "median_known_positives_per_query": 2.0,
+    "stage1_retrieval": {
+      "designated_hit@1": 0.003,
+      "designated_hit@5": 0.010666666666666666,
+      "designated_hit@10": 0.019666666666666666,
+      "any_known_positive_hit@1": 0.021666666666666667,
+      "any_known_positive_hit@5": 0.045,
+      "any_known_positive_hit@10": 0.08133333333333333
+    },
+    "fusion_T20": {
+      "designated_hit@10": 0.025666666666666667,
+      "any_known_positive_hit@10": 0.10333333333333333,
+      "note": "Fusion Hit@10 for a partner equals the stored fusion_hit10 on the query where that partner is designated; shortlist fusion order is human-specific and independent of designation."
+    },
+    "direct_full_gallery": {
+      "designated_hit@10": 0.073,
+      "any_known_positive_hit@10": 0.20466666666666666
+    },
+    "definition": {
+      "known_positives": "Evaluation-file positive viral partners of the query human (HVIDB test / IntAct cross-test positives), not training-only partners.",
+      "designated_positive": "The single labelled true partner of the pair-level query; primary protocol for Table 2 and the Hit@K = Recall@T \u00d7 oracle@K identity.",
+      "any_known_positive_hit@K": "1 if at least one evaluation-file positive partner of the query human has Stage-1 rank \u2264 K (or fusion/direct Hit@10 membership for those arms)."
+    },
+    "missing_partner_rank_rows": 0
+  },
+  "intact_cross_test": {
+    "label": "IntAct cross-test",
+    "n_queries": 4696,
+    "n_unique_humans": 2189,
+    "frac_queries_multi_positive": 0.748083475298126,
+    "frac_humans_multi_positive": 0.45957058017359526,
+    "mean_known_positives_per_query": 4.149063032367973,
+    "median_known_positives_per_query": 3.0,
+    "stage1_retrieval": {
+      "designated_hit@1": 0.002768313458262351,
+      "designated_hit@5": 0.014906303236797274,
+      "designated_hit@10": 0.026831345826235094,
+      "any_known_positive_hit@1": 0.016396933560477,
+      "any_known_positive_hit@5": 0.060689948892674615,
+      "any_known_positive_hit@10": 0.10413117546848381
+    },
+    "fusion_T20": {
+      "designated_hit@10": 0.02619250425894378,
+      "any_known_positive_hit@10": 0.09625212947189098,
+      "note": "Fusion Hit@10 for a partner equals the stored fusion_hit10 on the query where that partner is designated; shortlist fusion order is human-specific and independent of designation."
+    },
+    "direct_full_gallery": {
+      "designated_hit@10": 0.002342419080068143,
+      "any_known_positive_hit@10": 0.010008517887563885
+    },
+    "definition": {
+      "known_positives": "Evaluation-file positive viral partners of the query human (HVIDB test / IntAct cross-test positives), not training-only partners.",
+      "designated_positive": "The single labelled true partner of the pair-level query; primary protocol for Table 2 and the Hit@K = Recall@T \u00d7 oracle@K identity.",
+      "any_known_positive_hit@K": "1 if at least one evaluation-file positive partner of the query human has Stage-1 rank \u2264 K (or fusion/direct Hit@10 membership for those arms)."
+    },
+    "missing_partner_rank_rows": 0
+  }
+}

@@ -50,3 +50,8 @@ Checkpoints (~5.3 GB each) and `train_protein_pairs.pkl` (~386 MB) are on Zenodo
 
 Place downloaded files under `checkpoints/` and `data/processed/` as named in `checkpoints/DOWNLOAD.txt` and `data/processed/DOWNLOAD.txt`.
 
+
+## Clarification analyses (2026-08-27)
+
+- `analysis_results/multilabel_any_known_positive.json` — designated vs any-known-positive Hit@K (S18)
+- `analysis_results/gallery_construction_reachability.json` — gallery construction / operational reachability (S19)

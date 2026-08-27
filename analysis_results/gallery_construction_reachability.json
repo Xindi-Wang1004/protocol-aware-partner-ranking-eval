@@ -1,0 +1,21 @@
+{
+  "hvidb": {
+    "nominal_biological_universe_ids": 2104,
+    "sequence_available_retrievable_gallery": 1115,
+    "augmentation_added_ids": 0,
+    "final_stated_evaluation_gallery": 1115,
+    "nominal_membership": 1.0,
+    "operational_reachability": 1.0,
+    "construction_note": "Evaluation positives are restricted to viruses with recoverable sequences in the retrievable gallery, so operational reachability is 100% by construction."
+  },
+  "intact_cross_test": {
+    "nominal_biological_universe_ids": 2104,
+    "sequence_available_from_hvidb_nominal": 1115,
+    "augmentation_added_non_nominal_true_partner_ids": 114,
+    "final_stated_evaluation_gallery": 1229,
+    "nominal_membership": 0.348,
+    "operational_reachability": 1.0,
+    "construction_note": "Gallery = 1,115 sequence-available HVIDB-2104 IDs plus 114 IntAct true-partner viruses outside the nominal set, added so ranking remains defined for every query. Operational reachability is 100%; natural coverage of the HVIDB-2104 nominal universe is reported separately as nominal membership (34.8%)."
+  },
+  "interpretation": "100% reachability is an operational property of gallery construction/filtering, not empirical retrieval success and not the natural coverage rate of incomplete interaction databases."
+}

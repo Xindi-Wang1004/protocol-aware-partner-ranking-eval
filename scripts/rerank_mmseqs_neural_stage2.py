@@ -129,10 +129,35 @@ def main() -> None:
         if p.get("human_seq"):
             pool_human.setdefault(p["human_id"], p["human_seq"])
 
-    human_uniq = sorted(set(h_ids))
-    missing = [h for h in human_uniq if h not in pool_human]
+    hitmap = load_hits(hits_path)
+    n_q = len(h_ids)
+    retr_ranks = np.zeros(n_q, dtype=np.int32)
+    orders: list[np.ndarray] = []
+    for i, (h, vt) in enumerate(zip(h_ids, v_true)):
+        qid = f"q{i}"
+        sc = np.zeros(n_g, dtype=np.float64)
+        for t, b in hitmap.get(qid, {}).items():
+            if t in v2j:
+                sc[v2j[t]] = b
+        order = np.lexsort((np.arange(n_g), -sc))
+        orders.append(order)
+        j = v2j[vt]
+        rr = int(np.where(order == j)[0][0]) + 1
+        retr_ranks[i] = rr
+
+    recall20 = (retr_ranks <= args.T).astype(np.float64)
+    recall100 = (retr_ranks <= 100).astype(np.float64)
+    oracle_mask = retr_ranks <= args.T
+    oracle_idx = np.where(oracle_mask)[0]
+    humans_needed = sorted({h_ids[i] for i in oracle_idx})
+    missing = [h for h in humans_needed if h not in pool_human]
     if missing:
         raise SystemExit(f"missing human seqs: {missing[:5]} ({len(missing)})")
+    print(
+        f"oracle@T n={len(oracle_idx)}; encoding {len(humans_needed)} humans "
+        f"(skip {n_q - len(oracle_idx)} unreachable-for-rerank queries)",
+        flush=True,
+    )
 
     clf_cache = torch.load(
         repo / "analysis_results/embed_cache/2104_classifier_virus_1115_512.pt"
@@ -150,11 +175,12 @@ def main() -> None:
     ckpt = repo / "classification_task/esm3_frozen/best_model.pt"
     if not ckpt.exists():
         ckpt = repo / "checkpoints/classification_esm3_frozen_best_model.pt"
-    clf_model, _ = reu.load_classification_model(str(ckpt), device=device)
+    # Encode humans on CPU to avoid ESM3 OOM; classifier head runs on device.
+    clf_model, _ = reu.load_classification_model(str(ckpt), device="cpu")
     clf_model.eval()
-
+    torch.cuda.empty_cache() if torch.cuda.is_available() else None
     h_clf_ids, h_clf_emb = ne.precompute_classifier_embeddings(
-        clf_model, human_uniq, {h: pool_human[h] for h in human_uniq}, 8
+        clf_model, humans_needed, {h: pool_human[h] for h in humans_needed}, 1
     )
     h2i = {h: i for i, h in enumerate(h_clf_ids)}
     h_clf = (
@@ -162,46 +188,45 @@ def main() -> None:
         if isinstance(h_clf_emb, torch.Tensor)
         else np.asarray(h_clf_emb)
     )
+    # Move only the lightweight classifier head to the scoring device
+    clf_model.classifier.to(device)
 
-    hitmap = load_hits(hits_path)
-    # query ids in ranks csv are q0..; hits use same
-    n_q = len(h_ids)
-    retr_ranks = np.zeros(n_q, dtype=np.int32)
     fusion_hit = np.zeros(n_q, dtype=np.float64)
     replace_hit = np.zeros(n_q, dtype=np.float64)
-    oracle_mask = np.zeros(n_q, dtype=bool)
-    recall20 = np.zeros(n_q)
-    recall100 = np.zeros(n_q)
     out_rows = []
+    scores_by_q = []
+    for i, (h, vt) in enumerate(zip(h_ids, v_true)):
+        qid = f"q{i}"
+        order = orders[i]
+        sc = np.zeros(n_g, dtype=np.float64)
+        for t, b in hitmap.get(qid, {}).items():
+            if t in v2j:
+                sc[v2j[t]] = b
+        scores_by_q.append(sc)
 
     with torch.no_grad():
         for i, (h, vt) in enumerate(zip(h_ids, v_true)):
             qid = f"q{i}"
-            sc = np.zeros(n_g, dtype=np.float64)
-            for t, b in hitmap.get(qid, {}).items():
-                if t in v2j:
-                    sc[v2j[t]] = b
-            order = np.lexsort((np.arange(n_g), -sc))
+            order = orders[i]
+            sc = scores_by_q[i]
             j = v2j[vt]
-            rr = int(np.where(order == j)[0][0]) + 1
-            retr_ranks[i] = rr
-            recall20[i] = 1.0 if rr <= args.T else 0.0
-            recall100[i] = 1.0 if rr <= 100 else 0.0
-            oracle_mask[i] = rr <= args.T
-
+            rr = int(retr_ranks[i])
             top = order[: args.T]
-            base = sc[top]
-            hi = h2i[h]
-            h_vec = torch.as_tensor(h_clf[hi], device=device).float()
-            v_chunk = torch.as_tensor(v_clf[top], device=device).float()
-            combined = torch.cat([h_vec.unsqueeze(0).expand(len(top), -1), v_chunk], dim=1)
-            clf_cand = clf_model.classifier(combined).squeeze(-1).detach().cpu().numpy()
-            fused = args.alpha * minmax(base) + (1.0 - args.alpha) * minmax(clf_cand)
-            top_order = top[np.argsort(-fused, kind="mergesort")]
-            # pure classifier replace-rerank on shortlist
-            repl_order = top[np.argsort(-clf_cand, kind="mergesort")]
-
-            if j in top:
+            rerank_rank: int | str = ""
+            if oracle_mask[i]:
+                base = sc[top]
+                hi = h2i[h]
+                h_vec = torch.as_tensor(h_clf[hi], device=device).float()
+                v_chunk = torch.as_tensor(v_clf[top], device=device).float()
+                combined = torch.cat(
+                    [h_vec.unsqueeze(0).expand(len(top), -1), v_chunk], dim=1
+                )
+                clf_cand = (
+                    clf_model.classifier(combined).squeeze(-1).detach().cpu().numpy()
+                )
+                fused = args.alpha * minmax(base) + (1.0 - args.alpha) * minmax(clf_cand)
+                top_order = top[np.argsort(-fused, kind="mergesort")]
+                repl_order = top[np.argsort(-clf_cand, kind="mergesort")]
                 fr = int(np.where(top_order == j)[0][0]) + 1
                 pr = int(np.where(repl_order == j)[0][0]) + 1
                 fusion_hit[i] = 1.0 if fr <= args.K else 0.0
@@ -210,7 +235,6 @@ def main() -> None:
             else:
                 fusion_hit[i] = 0.0
                 replace_hit[i] = 0.0
-                rerank_rank = ""
 
             out_rows.append(
                 {
@@ -225,7 +249,7 @@ def main() -> None:
                 }
             )
             if (i + 1) % 500 == 0:
-                print(f"  {i+1}/{n_q} fus@10={fusion_hit[:i+1].mean():.4f}", flush=True)
+                print(f"  {i+1}/{n_q} fus@10={fusion_hit[: i + 1].mean():.4f}", flush=True)
 
     om = oracle_mask
     summary = {

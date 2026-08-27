@@ -96,11 +96,15 @@ def simulate_grid(
     return rows
 
 
+# Default sizes span fixed large galleries through Hit@K-saturating pair-subset scales.
+DEFAULT_NESTED_GALLERY_SIZES: tuple[int, ...] = (1000, 500, 100, 50, 20, 10, 5, 2)
+
+
 def simulate_gallery_nesting(
     *,
     n_queries: int = 2000,
     full_gallery: int = 1000,
-    nested_sizes: tuple[int, ...] = (1000, 200, 20, 10),
+    nested_sizes: tuple[int, ...] = DEFAULT_NESTED_GALLERY_SIZES,
     T: int = 20,
     K: int = 10,
     score_noise: float = 1.0,
@@ -108,7 +112,8 @@ def simulate_gallery_nesting(
 ) -> list[dict]:
     """Same underlying scores; evaluation gallery shrinks but always contains the true partner.
 
-    Pair-subset protocols correspond to the smallest nested gallery.
+    Pair-subset protocols correspond to the smallest nested galleries (|G| ≤ K),
+    where Hit@K is structurally 1 whenever the true partner is in the gallery.
     Headline Hit@K is monotonically non-decreasing as the gallery shrinks
     (equivalently, monotonically non-increasing as the gallery grows).
     This matches the empirical pattern that fixed large-gallery Hit@K is lower.

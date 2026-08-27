@@ -1,0 +1,149 @@
+{
+  "n_queries": 4000,
+  "seed": 0,
+  "T": 20,
+  "K": 10,
+  "recalls": [
+    0.05,
+    0.2,
+    0.5,
+    0.8
+  ],
+  "oracles": [
+    0.5,
+    0.9
+  ],
+  "identity_max_abs_error": 5.551115123125783e-17,
+  "identity_grid": [
+    {
+      "r": 0.05,
+      "q": 0.5,
+      "hit@K": 0.027,
+      "r_times_q": 0.025,
+      "identity_abs_error": 3.469446951953614e-18
+    },
+    {
+      "r": 0.05,
+      "q": 0.9,
+      "hit@K": 0.04675,
+      "r_times_q": 0.045000000000000005,
+      "identity_abs_error": 6.938893903907228e-18
+    },
+    {
+      "r": 0.2,
+      "q": 0.5,
+      "hit@K": 0.105,
+      "r_times_q": 0.1,
+      "identity_abs_error": 1.3877787807814457e-17
+    },
+    {
+      "r": 0.2,
+      "q": 0.9,
+      "hit@K": 0.1885,
+      "r_times_q": 0.18000000000000002,
+      "identity_abs_error": 0.0
+    },
+    {
+      "r": 0.5,
+      "q": 0.5,
+      "hit@K": 0.23875,
+      "r_times_q": 0.25,
+      "identity_abs_error": 0.0
+    },
+    {
+      "r": 0.5,
+      "q": 0.9,
+      "hit@K": 0.4475,
+      "r_times_q": 0.45,
+      "identity_abs_error": 5.551115123125783e-17
+    },
+    {
+      "r": 0.8,
+      "q": 0.5,
+      "hit@K": 0.396,
+      "r_times_q": 0.4,
+      "identity_abs_error": 5.551115123125783e-17
+    },
+    {
+      "r": 0.8,
+      "q": 0.9,
+      "hit@K": 0.7145,
+      "r_times_q": 0.7200000000000001,
+      "identity_abs_error": 0.0
+    }
+  ],
+  "nesting_sizes": [
+    1000,
+    500,
+    100,
+    50,
+    20,
+    10,
+    5,
+    2
+  ],
+  "nesting_hits": [
+    0.01,
+    0.01875,
+    0.10025,
+    0.191,
+    0.4875,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "nesting_curve": [
+    {
+      "gallery_size": 1000,
+      "hit@K": 0.01,
+      "protocol": "fixed-gallery",
+      "structural_hitK_unity": false
+    },
+    {
+      "gallery_size": 500,
+      "hit@K": 0.01875,
+      "protocol": "fixed-gallery",
+      "structural_hitK_unity": false
+    },
+    {
+      "gallery_size": 100,
+      "hit@K": 0.10025,
+      "protocol": "fixed-gallery",
+      "structural_hitK_unity": false
+    },
+    {
+      "gallery_size": 50,
+      "hit@K": 0.191,
+      "protocol": "fixed-gallery",
+      "structural_hitK_unity": false
+    },
+    {
+      "gallery_size": 20,
+      "hit@K": 0.4875,
+      "protocol": "fixed-gallery",
+      "structural_hitK_unity": false
+    },
+    {
+      "gallery_size": 10,
+      "hit@K": 1.0,
+      "protocol": "pair-subset",
+      "structural_hitK_unity": true
+    },
+    {
+      "gallery_size": 5,
+      "hit@K": 1.0,
+      "protocol": "pair-subset",
+      "structural_hitK_unity": true
+    },
+    {
+      "gallery_size": 2,
+      "hit@K": 1.0,
+      "protocol": "pair-subset",
+      "structural_hitK_unity": true
+    }
+  ],
+  "hvidb_pair_subset_P_G_le_10": 0.851,
+  "inflation_vs_full_gallery": 100.0,
+  "monotonic_nondecreasing_hit": true,
+  "note": "Panel B uses fixed underlying scores with nested evaluation galleries |G|\u2208[1000, 500, 100, 50, 20, 10, 5, 2]; Hit@K=1 whenever |G|\u2264K and the true partner is in-gallery."
+}

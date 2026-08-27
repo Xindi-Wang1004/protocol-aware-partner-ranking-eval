@@ -20,7 +20,7 @@ Create a GitHub release from that tag. Existing diagnostic scripts stay on relea
 
 ## Zenodo
 
-The manuscript now cites https://doi.org/10.5281/zenodo.22009119.
+The manuscript now cites https://doi.org/10.5281/zenodo.22123892.
 After the GitHub tag is public, refresh that deposit (new version) **or** mint a software-specific DOI from the GitHub release.
 
 Upload the source tree of this package (LICENSE, tests, examples, no `.venv`, no BindingDB dumps).

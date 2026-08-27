@@ -29,7 +29,7 @@ This repository provides the **frozen diagnostic retrieve-then-rerank stack** us
 ## Data availability (BIB)
 
 - Upstream sources: [HVIDB](https://doi.org/10.1093/bib/bbaa425), [IntAct](https://doi.org/10.1093/nar/gkt1115)
-- Large binaries (checkpoints + `train_protein_pairs.pkl`): [Zenodo](https://doi.org/10.5281/zenodo.22009119) (`10.5281/zenodo.22009119`)
+- Large binaries (checkpoints + `train_protein_pairs.pkl`): [Zenodo](https://doi.org/10.5281/zenodo.22123892 (concept DOI: https://doi.org/10.5281/zenodo.21809504)) (`10.5281/zenodo.22123892`)
 - Code + lightweight processed files: this GitHub repository (releases `diagnostic-eval` and `partner-rank-eval`)
 - Code license: MIT · Processed data: CC BY 4.0
 
@@ -45,7 +45,7 @@ Wang X, Luo J, Li Y, Hon C. Protocol-aware benchmarking of constrained biologica
 
 Checkpoints (~5.3 GB each) and `train_protein_pairs.pkl` (~386 MB) are on Zenodo:
 
-- **DOI:** https://doi.org/10.5281/zenodo.22009119
+- **DOI:** https://doi.org/10.5281/zenodo.22123892
 - Record: https://zenodo.org/records/22009119
 
 Place downloaded files under `checkpoints/` and `data/processed/` as named in `checkpoints/DOWNLOAD.txt` and `data/processed/DOWNLOAD.txt`.
